@@ -1,6 +1,7 @@
 /home/runner/workspace/src/main/java/com/chatbot/model/Feedback.java
 /home/runner/workspace/src/main/java/com/chatbot/model/Resource.java
 /home/runner/workspace/src/main/java/com/chatbot/config/SecurityConfig.java
+/home/runner/workspace/src/main/java/com/chatbot/service/ExternalServiceClient.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/auth/LoginRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/security/AuthEntryPointJwt.java
 /home/runner/workspace/src/main/java/com/chatbot/repository/ChatMessageRepository.java
@@ -34,6 +35,7 @@
 /home/runner/workspace/src/main/java/com/chatbot/repository/RasaModelRepository.java
 /home/runner/workspace/src/main/java/com/chatbot/model/User.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/chat/ChatResponse.java
+/home/runner/workspace/src/main/java/com/chatbot/config/ServiceConfig.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/rasa/RasaModelUploadRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/security/AuthTokenFilter.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/auth/JwtResponse.java

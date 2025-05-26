@@ -1,0 +1,51 @@
+
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: usthb-chatbot-backend
+  
+  profiles:
+    active: prod
+    
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/chatbot_db}
+    username: ${DB_USERNAME:chatbot}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+
+logging:
+  level:
+    com.chatbot: INFO
+    org.springframework.security: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# External Services
+services:
+  rasa:
+    url: ${RASA_URL:http://0.0.0.0:5005}
+    timeout: 30000
+  llm:
+    url: ${LLM_URL:http://0.0.0.0:5001}
+    timeout: 60000
+
+# Security
+jwt:
+  secret: ${JWT_SECRET:defaultSecretKey}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+# File Upload
+file:
+  upload-dir: ${UPLOAD_DIR:./uploads}
+  max-size: 10MB
