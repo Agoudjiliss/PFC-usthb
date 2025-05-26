@@ -65,7 +65,7 @@ run = ["java", "-classpath", ".:target/dependency/*", "Main"]
 deploymentTarget = "cloudrun"
 
 [workflows]
-runButton = "Start Full System"
+runButton = "Deploy Backend"
 
 [[workflows.workflow]]
 name = "Run Backend"
@@ -81,14 +81,57 @@ task = "shell.exec"
 args = "mvn spring-boot:run"
 
 [[workflows.workflow]]
-name = "Start Full System"
+name = "Deploy Backend"
+author = 43129621
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "chmod +x deploy/scripts/start-backend.sh"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./deploy/scripts/start-backend.sh"
+
+[[workflows.workflow]]
+name = "Deploy Rasa"
+author = 43129621
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "chmod +x deploy/scripts/start-rasa.sh"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./deploy/scripts/start-rasa.sh"
+
+[[workflows.workflow]]
+name = "Deploy LLM"
+author = 43129621
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "chmod +x deploy/scripts/start-llm.sh"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./deploy/scripts/start-llm.sh"
+
+[[workflows.workflow]]
+name = "Full Deployment"
 author = 43129621
 mode = "parallel"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python llm_server.py"
+args = "./deploy/scripts/start-llm.sh"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "mvn clean compile spring-boot:run"
+args = "./deploy/scripts/start-rasa.sh"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./deploy/scripts/start-backend.sh"

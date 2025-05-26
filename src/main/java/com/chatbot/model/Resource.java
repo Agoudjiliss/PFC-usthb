@@ -101,14 +101,10 @@ public class Resource {
     public String getProcessedDataPath() { return processedDataPath; }
     public void setProcessedDataPath(String processedDataPath) { this.processedDataPath = processedDataPath; }
 
-    public String getFileName() { return fileName; }
-    public void setFileName(String fileName) { this.fileName = fileName; }
-    
-    public String getFileType() { return fileType; }
-    public void setFileType(String fileType) { this.fileType = fileType; }
-    
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    // Note: Using existing fields with proper names
+    // filename is used instead of fileName
+    // contentType is used instead of fileType
+    // No description field in this model
     
     public LocalDateTime getUploadedAt() { return uploadedAt; }
     public void setUploadedAt(LocalDateTime uploadedAt) { this.uploadedAt = uploadedAt; }
