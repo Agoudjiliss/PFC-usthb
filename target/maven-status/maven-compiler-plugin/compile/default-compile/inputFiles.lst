@@ -49,6 +49,7 @@
 /home/runner/workspace/src/main/java/com/chatbot/dto/settings/GeneralSettingsResponse.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/chat/ChatRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/feedback/FeedbackRequest.java
+/home/runner/workspace/src/main/java/com/chatbot/controller/HealthController.java
 /home/runner/workspace/src/main/java/com/chatbot/controller/AuthController.java
 /home/runner/workspace/src/main/java/com/chatbot/model/ChatMessage.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/settings/ChatSettingsResponse.java

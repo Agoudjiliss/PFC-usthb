@@ -1,0 +1,97 @@
+Tu es un assistant technique spécialisé en documentation de projets logiciels.
+
+Voici ce que je te demande maintenant :  
+Génère une documentation technique complète de mon projet de chatbot intelligent USTHB-Bot basé sur :
+
+- Backend Java Spring Boot
+- Serveur Rasa (local)
+- Serveur LLaMA 3.0 (local, REST)
+- Frontend Next.js (généré avec V0.dev) avec deux interfaces :
+  - Interface Utilisateur
+  - Interface Administrateur
+
+---
+
+### Partie 1 : Documentation du backend Spring Boot
+
+1. Description générale de l’architecture :
+   - Authentification JWT (rôles USER / ADMIN)
+   - Microservices ou structure modulaire (controllers, services, DTOs, repos)
+   - Connexion à Rasa pour le traitement du langage
+   - Connexion à LLaMA 3.0 pour traitement des PDF/images
+   - Entraînement automatique de Rasa après ajout de données
+   - Base de données PostgreSQL (ou simulée)
+
+2. Explication de chaque module :
+   - Authentification
+   - Chat
+   - Upload / LLM / Dataset
+   - Training Rasa
+   - Intents / FAQ
+   - Dashboard / Stats
+   - Feedback
+   - Settings
+
+3. Liste des endpoints REST (avec exemple de payloads) :
+   Pour chaque route :
+   - Méthode, URL, rôle requis
+   - Description
+   - Exemple de requête / réponse
+   - Code de retour
+
+---
+
+### Partie 2 : Documentation pour les développeurs frontend
+
+#### A. Interface Utilisateur
+
+1. Pages principales :
+   - Connexion / Inscription
+   - Espace de chat
+   - Historique des messages
+   - Suggestions via intents
+   - Gestion de session JWT
+
+2. Comportement attendu :
+   - Appels API à /auth, /chat, /chat/history
+   - Stockage local des tokens
+   - Gestion des erreurs et rechargements
+
+#### B. Interface Administrateur
+
+1. Pages principales :
+   - Dashboard : statistiques en temps réel
+   - Upload de fichiers PDF / audio
+   - Visualisation des intents & édition
+   - Suivi du training et modèles Rasa
+   - Gestion des paramètres du chatbot
+   - Feedback utilisateur
+
+2. Endpoints utilisés par l’interface admin
+   - Upload → /resources/upload
+   - Training → /training/start, /training/status
+   - Intents → CRUD complet sur /intents
+   - Stats → /admin/stats/...
+   - Settings → /settings/chat, /settings/general
+
+---
+
+### Partie 3 : Conseils de déploiement
+
+1. Fichiers nécessaires :
+   - application.yml (Spring Boot)
+   - endpoints.yml (Rasa)
+   - LLM config (mock server)
+
+2. Ports par défaut :
+   - Spring Boot : 8080
+   - Rasa : 5005
+   - LLM local : 5050 ou 8000
+
+3. Conseils pour VPS ou Docker
+
+---
+
+Génère une documentation professionnelle, claire et bien structurée, formatée pour être publiée en Markdown ou transformée en PDF/Notion/Confluence.
+
+Commence maintenant.
