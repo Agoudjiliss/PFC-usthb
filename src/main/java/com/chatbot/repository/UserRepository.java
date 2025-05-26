@@ -10,18 +10,17 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
     Optional<User> findByUsername(String username);
 
     Optional<User> findByEmail(String email);
 
-    boolean existsByUsername(String username);
+    Boolean existsByUsername(String username);
 
-    boolean existsByEmail(String email);
+    Boolean existsByEmail(String email);
 
-    @Query("SELECT COUNT(u) FROM User u WHERE u.createdAt >= :date")
-    long countUsersCreatedAfter(LocalDateTime date);
+    @Query("SELECT COUNT(u) FROM User u WHERE u.role = ?1")
+    long countByRole(String role);
 
-    @Query("SELECT COUNT(u) FROM User u WHERE u.lastLogin >= :date")
-    long countActiveUsersAfter(LocalDateTime date);
+    @Query("SELECT COUNT(u) FROM User u WHERE u.lastLogin > ?1")
+    long countByLastLoginAfter(LocalDateTime date);
 }
