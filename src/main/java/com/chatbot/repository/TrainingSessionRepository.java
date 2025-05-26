@@ -12,4 +12,3 @@ public interface TrainingSessionRepository extends JpaRepository<TrainingSession
     List<TrainingSession> findAllByOrderByStartedAtDesc();
     Optional<TrainingSession> findFirstByStatusOrderByStartedAtDesc(TrainingSession.TrainingStatus status);
 }
-`

@@ -2,6 +2,7 @@ compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*
 run = "java -classpath .:target/dependency/* Main"
 entrypoint = "src/main/java/Main.java"
 hidden = ["**/*.class"]
+modules = ["python-3.11"]
 
 [packager]
 language = "java"
@@ -64,7 +65,7 @@ run = ["java", "-classpath", ".:target/dependency/*", "Main"]
 deploymentTarget = "cloudrun"
 
 [workflows]
-runButton = "Run Backend"
+runButton = "Start Full System"
 
 [[workflows.workflow]]
 name = "Run Backend"
@@ -78,3 +79,16 @@ args = "mvn clean compile"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "mvn spring-boot:run"
+
+[[workflows.workflow]]
+name = "Start Full System"
+author = 43129621
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python llm_server.py"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "mvn clean compile spring-boot:run"

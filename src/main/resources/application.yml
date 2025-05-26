@@ -48,7 +48,7 @@ app:
     max-request-size: 100MB
 
 llama:
-  url: ${LLAMA_URL:http://localhost:5000}
+  url: http://localhost:5000
 
 # Swagger Documentation
 springdoc:
