@@ -1,0 +1,123 @@
+Tu es un développeur backend Java Spring Boot expert. Tu vas générer un backend complet qui alimente une application frontend (déjà développée avec V0.dev) composée de deux interfaces :
+
+1. Interface utilisateur :
+   - Connexion / inscription
+   - Discussion avec chatbot (Rasa)
+   - Historique des messages
+   - Suggestions issues des intents & FAQ
+
+2. Interface administrateur :
+   - Dashboard avec statistiques (utilisateurs, intents, fichiers)
+   - Gestion des intents & FAQ
+   - Upload de fichiers (PDF, images, audio…)
+   - Suivi du training de modèles Rasa
+   - Configuration du chatbot
+   - Logs et feedback
+
+---
+
+### Objectif technique :
+
+Créer un backend REST complet avec Java Spring Boot (architecture modulaire) qui :
+
+- Gère l'authentification (JWT)
+- Stocke les messages, intents, fichiers, feedbacks dans PostgreSQL
+- Dialogue avec Rasa (local, pas cloud)
+- Connecte un serveur LLaMA 3.0 local pour :
+  - Lire un PDF
+  - Extraire des données utiles
+  - Générer un dataset JSON compatible avec Rasa NLU
+  - Lancer un training automatique dans Rasa
+
+---
+
+### API REST à créer :
+
+#### AUTH
+- POST /auth/login — connexion
+- POST /auth/register — inscription
+- GET /auth/me — infos utilisateur connecté
+
+#### CHATBOT (Utilisateur)
+- POST /chat — envoyer un message au bot (via Rasa)
+- GET /chat/history — récupérer historique des messages
+- GET /chat/intents — récupérer suggestions
+
+#### INTENTS (Admin)
+- GET /intents
+- POST /intents
+- PUT /intents/{id}
+- DELETE /intents/{id}
+- GET /intents/search?query=
+
+#### RESOURCES / DATASETS (Admin)
+- POST /resources/upload — upload PDF/image
+- GET /resources — liste des fichiers uploadés
+- GET /resources/{id} — état : traité, erreur, en attente
+- DELETE /resources/{id}
+- POST /resources/process/{id} — envoyer le PDF au serveur LLaMA 3.0
+  - LLaMA retourne un dataset JSON
+  - Le backend le convertit et l’injecte dans le training Rasa automatiquement
+
+#### TRAINING
+- POST /training/start — entraîne un modèle Rasa
+- GET /training/status — état du training en cours
+- GET /training/history
+- GET /training/logs/{id}
+
+#### DASHBOARD
+- GET /admin/stats/users
+- GET /admin/stats/devices
+- GET /admin/stats/locations
+- GET /admin/stats/files
+- GET /admin/stats/intents
+
+#### FEEDBACK & LOGS
+- POST /feedback
+- GET /feedback
+- GET /logs
+
+#### SETTINGS
+- GET/PUT /settings/chat — messages système, comportement bot
+- GET/PUT /settings/general
+
+---
+
+### Composants techniques à inclure :
+
+- Spring Boot + Web + JPA + Security + JWT
+- PostgreSQL
+- Swagger / OpenAPI 3
+- Modules :
+  - auth/ (JWT, sécurité)
+  - chat/ (Rasa interface)
+  - llm/ (appel REST à LLaMA 3.0 local)
+  - dataset/ (construction JSON Rasa)
+  - training/ (lancement Rasa en CLI ou REST)
+  - dashboard/ (stats)
+  - file/ (gestion PDF/images)
+  - admin/ (intents, paramètres, feedback)
+- Services robustes avec @Transactional, erreurs gérées
+- Documentation Swagger complète
+- Optionnel : Système de file (RabbitMQ ou AsyncTask) pour traitement PDF long
+
+---
+
+### Instructions de traitement avec LLaMA 3.0 :
+
+- Le backend reçoit un fichier PDF
+- Il l'envoie en POST à http://localhost:5000/process-pdf (serveur LLaMA 3.0 local)
+- LLaMA renvoie du texte structuré
+- Le backend le transforme en Rasa NLU JSON :
+  `json
+  {
+    "rasa_nlu_data": {
+      "common_examples": [
+        {
+          "text": "Comment créer une startup en Algérie ?",
+          "intent": "startup_creation",
+          "entities": []
+        }
+      ]
+    }
+  }
