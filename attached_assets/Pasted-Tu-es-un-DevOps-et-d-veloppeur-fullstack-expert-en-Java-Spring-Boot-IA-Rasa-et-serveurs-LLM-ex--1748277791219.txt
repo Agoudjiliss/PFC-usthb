@@ -1,0 +1,68 @@
+Tu es un DevOps et développeur fullstack expert en Java Spring Boot, IA (Rasa), et serveurs LLM (ex : LLaMA).
+
+Voici ce que tu dois faire maintenant, étape par étape, sans t’arrêter jusqu’à ce que tout fonctionne :
+
+---
+
+### 1. Séparer mon architecture en 3 services indépendants :
+
+#### A. Backend Java Spring Boot (API REST) :
+- Hébergé sur Heroku
+- Connexion PostgreSQL (Heroku add-on)
+- Expose les routes :
+  - /auth, /chat, /upload, /intents, /training, /admin/stats, etc.
+- Lit les variables d’environnement :
+  - RASA_URL = URL du serveur Rasa
+  - LLAMA_URL = URL du serveur LLM local/mock
+  - JWT_SECRET, PORT, DATABASE_URL, etc.
+
+#### B. Serveur Rasa (core NLP) :
+- À déployer sur Railway.app, Render, ou VPS
+- Accessible via REST (/webhooks/rest/webhook, /model/train, etc.)
+- Peut être une instance de base + modèle personnalisé
+- Son URL publique sera passée dans RASA_URL
+
+#### C. Serveur LLM (simulé ou réel) :
+- Simule un endpoint POST /process-pdf
+- Peut être développé en Flask, FastAPI, Node.js ou autre
+- Reçoit un fichier PDF, retourne un JSON compatible Rasa NLU
+- À héberger sur Render ou local
+
+---
+
+### 2. Configurer le backend Spring Boot :
+
+- Adapter application.yml pour utiliser ${RASA_URL} et ${LLAMA_URL}
+- Ajouter tout fallback ou gestion d’erreur si l’un des deux services est indisponible
+- Ajouter dans Swagger une doc claire de l’appel LLM + entraînement Rasa
+
+---
+
+### 3. Me générer :
+
+- Un fichier README.md clair pour chaque service :
+  - Backend Spring Boot : comment le build, déployer sur Heroku, variables à définir
+  - Serveur Rasa : comment le lancer, où le déployer, tester les webhooks
+  - Serveur LLM : petit serveur Flask ou Node.js, exemple d’appel, réponse attendue
+
+- Un curl ou test Postman pour vérifier la chaîne complète :
+  - POST PDF → LLM → dataset JSON → training → modèle Rasa actif → réponse au chatbot
+
+---
+
+### 4. Tester la communication entre services :
+
+- Depuis le backend, appeler Rasa (message utilisateur)
+- Depuis le backend, appeler le LLM (PDF → dataset)
+- Vérifier que l'entraînement Rasa est déclenché automatiquement
+- Confirmer que tout est connecté, fonctionnel et prêt à déployer
+
+---
+
+### 5. Finalisation
+
+- Générer un diagramme d’architecture simple (texte ou PlantUML)
+- Vérification des logs, des codes d’erreurs, et de la sécurité (CORS, JWT)
+- Me confirmer que les trois services sont séparés, déployables, et fonctionnent ensemble
+
+Commence maintenant, fais tout automatiquement, et ne t’arrête que quand tout est prêt à l’usage final.
