@@ -1,0 +1,57 @@
+Tu es un expert en backend Java Spring Boot, en IA conversationnelle avec Rasa, et en intégration LLM local avec LLaMA 3.0.
+
+Voici ce que tu dois faire :  
+Tu vas analyser un projet backend complet que j’ai déjà développé en Java Spring Boot. C’est la première fois que je t’en parle. Je veux que tu lises tout le projet (pom.xml, structure des fichiers, packages, contrôleurs, services, DTO, sécurité, configuration, etc.).
+
+---
+
+### Contexte du projet :
+
+Je développe un chatbot intelligent, USTHB-Bot, destiné aux étudiants de l’USTHB, en particulier ceux :
+- Qui lancent un projet de startup
+- Qui ont un PFE à thème technologique
+- Qui intègrent la cellule d’innovation et entrepreneuriat
+
+---
+
+### Le backend Spring Boot gère :
+
+- Authentification avec Spring Security + JWT
+- Gestion des utilisateurs et rôles (USER, ADMIN)
+- Interface de chat (via POST /chat, branché à un serveur Rasa local)
+- Historique des messages
+- Gestion des intents & FAQ (ajout, modification, recherche…)
+- Upload de fichiers (PDF/images/audio)
+- Connexion à un serveur LLaMA 3.0 en local pour :
+  - Lire les fichiers PDF
+  - Extraire de la donnée utile
+  - Générer automatiquement un dataset JSON Rasa NLU
+  - Lancer automatiquement l’entraînement du modèle Rasa
+- Suivi du training de Rasa (durée, progression, logs)
+- Dashboard admin avec statistiques (utilisateurs, devices, fichiers, intentions…)
+- Feedback utilisateur (via formulaire)
+- Configuration dynamique du chatbot (messages, fréquence, état)
+
+---
+
+### Ce que je veux de toi maintenant :
+
+1. Lire tout le projet backend (arborescence, classes, fichiers de config)  
+2. Vérifier que toutes les fonctionnalités citées ci-dessus sont bien présentes  
+3. Vérifier que :
+   - Le backend appelle Rasa localement (pas via une API cloud)
+   - Le backend appelle LLaMA 3.0 en local (via une route REST comme /process-pdf)
+   - Le backend transforme le texte de LLaMA en JSON compatible Rasa NLU
+   - Le backend envoie bien ce JSON à Rasa pour l’entraînement automatique
+   - Les fichiers sont traités, enregistrés, et leur état est mis à jour
+   - Les rôles ADMIN/USER sont bien protégés
+   - L’authentification est sécurisée et opérationnelle
+4. Me dire si le projet est prêt pour être déployé (Docker, VPS, cloud)
+5. Me signaler ce qu’il manque ou ce qui devrait être corrigé
+6. Me donner un résumé clair : ✅ ce qui fonctionne, ❌ ce qui manque, et comment finaliser
+
+---
+
+Tu peux poser des questions uniquement si des routes ou services ne sont pas clairs dans le code. Tu dois me guider vers un projet prêt à déployer, sans API externes, 100 % autonome.
+
+Commence maintenant.

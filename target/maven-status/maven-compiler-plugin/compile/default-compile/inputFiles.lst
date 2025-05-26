@@ -4,6 +4,7 @@
 /home/runner/workspace/src/main/java/com/chatbot/config/SecurityConfig.java
 /home/runner/workspace/src/main/java/com/chatbot/controller/ChatController.java
 /home/runner/workspace/src/main/java/com/chatbot/repository/TrainingSessionRepository.java
+/home/runner/workspace/src/main/java/com/chatbot/config/CorsConfig.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/auth/LoginRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/model/RasaModel.java
 /home/runner/workspace/src/main/java/com/chatbot/security/AuthEntryPointJwt.java
@@ -15,6 +16,7 @@
 /home/runner/workspace/src/main/java/com/chatbot/dto/rasa/RasaModelUploadRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/security/AuthTokenFilter.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/auth/JwtResponse.java
+/home/runner/workspace/src/main/java/com/chatbot/service/RasaConnectionService.java
 /home/runner/workspace/src/main/java/com/chatbot/service/RasaService.java
 /home/runner/workspace/src/main/java/com/chatbot/ChatbotBackendApplication.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/chat/ChatRequest.java
@@ -24,6 +26,7 @@
 /home/runner/workspace/src/main/java/com/chatbot/model/ChatMessage.java
 /home/runner/workspace/src/main/java/com/chatbot/repository/IntentRepository.java
 /home/runner/workspace/src/main/java/com/chatbot/repository/UserRepository.java
+/home/runner/workspace/src/main/java/com/chatbot/controller/RasaConnectionController.java
 /home/runner/workspace/src/main/java/com/chatbot/security/JwtUtils.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/auth/SignupRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/repository/ResourceRepository.java
