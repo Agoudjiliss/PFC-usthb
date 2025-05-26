@@ -1,0 +1,324 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_goodbye
+
+- story: Startup general info
+  steps:
+    - intent: startup_info
+    - action: utter_startup_info
+
+- story: USTHB startup info
+  steps:
+    - intent: startup_usthb
+    - action: utter_startup_usthb
+
+- story: Demander infos incubateurs et options
+  steps:
+    - intent: incubateur_info
+    - action: utter_incubateur_info
+    - intent: TECH_INNOV_info
+    - action: utter_TECH_INNOV_info
+    - intent: ICOSNET_info
+    - action: utter_ICOSNET_info
+
+- story: ICOSNET info
+  steps:
+    - intent: ICOSNET_info
+    - action: utter_ICOSNET_info
+    - action: utter_ask_icosnet_application
+    - intent: affirm
+    - action: utter_procedure_inscription_incubateur
+    - intent: deny
+    - action: utter_maybe_later
+
+- story: TECH_INNOV info 1
+  steps:
+    - intent: TECH_INNOV_info
+    - action: utter_TECH_INNOV_info
+    - action: utter_ask_techinnov_contact
+    - intent: choose_contact
+    - action: utter_techinnov_send_contact_info
+    - action: utter_ask_other_help
+
+- story: TECH_INNOV info 2
+  steps:
+    - intent: TECH_INNOV_info
+    - action: utter_TECH_INNOV_info
+    - action: utter_ask_techinnov_contact
+    - intent: choose_website
+    - action: utter_techinnov_suggest_website
+    - action: utter_ask_other_help
+
+- story: Create a startup
+  steps:
+    - intent: startup_creation
+    - action: utter_startup_creation
+    - action: utter_ask_creation_help
+
+
+- story: Startup Procedures
+  steps:
+    - intent: startup_procedure
+    - action: utter_startup_procedure
+    - action: utter_ask_procedure_details
+    - intent: affirm
+    - action: utter_procedure_step_by_step
+
+- story: Startup financing
+  steps:
+    - intent: startup_financement
+    - action: utter_startup_financement
+    - action: utter_ask_finance_type
+    - intent: affirm
+    - action: utter_finance_options_detail
+
+- story: Ressources USTHB path 1
+  steps:
+    - intent: startup_ressources
+    - action: utter_startup_ressources
+    - action: utter_ask_resource_booking
+    - intent: ask_disponibilites_actuelles
+    - action: utter_ressources_available
+
+- story: Ressources USTHB path 2
+  steps:
+    - intent: startup_ressources
+    - action: utter_startup_ressources
+    - action: utter_ask_resource_booking
+    - intent: ask_booking_process
+    - action: utter_booking_process
+
+- story: Challenges Startup
+  steps:
+    - intent: startup_challenges
+    - action: utter_startup_challenges
+
+- story: Cellule 1275 USTHB 1
+  steps:
+    - intent: startup_cellule
+    - action: utter_startup_cellule
+    - action: utter_ask_cellule_meeting
+    - intent: affirm
+    - action: utter_cellule_schedule
+    - intent: deny
+    - action: utter_cellule_online
+
+- story: Cellule 1275 USTHB 2
+  steps:
+    - intent: startup_cellule
+    - action: utter_startup_cellule
+    - action: utter_ask_cellule_meeting
+    - intent: deny
+    - action: utter_cellule_online
+
+- story: Collaboration Startup
+  steps:
+    - intent: startup_partenariat
+    - action: utter_startup_partenariat
+    - action: utter_ask_partner_type
+    - intent: affirm
+    - action: utter_partner_matching
+    - intent: deny
+    - action: utter_networking_events
+
+- story: Potential investor
+  steps:
+    - intent: startup_investisseurs
+    - action: utter_startup_investisseurs
+    - action: utter_ask_investor_pitch
+    - intent: affirm
+    - action: utter_pitch_guidelines
+    - intent: deny
+    - action: utter_investor_profiles
+
+- story: Event formation
+  steps:
+    - intent: formations_infos
+    - action: utter_formations_infos
+- story: Past events summaries
+  steps:
+    - intent: evenements_passes
+    - action: utter_evenements_passes
+- story: Mentorship guidance
+  steps:
+    - intent: mentorat_infos
+    - action: utter_mentorat_infos
+    - action: utter_ask_mentor_request
+    - intent: affirm
+    - action: utter_mentor_application
+
+- story: Practical resources info
+  steps:
+    - intent: ressources_pratiques
+    - action: utter_ressources_pratiques
+- story: Beginner tips
+  steps:
+    - intent: ressources_debutant
+    - action: utter_ressources_debutant
+- story: Finding clients
+  steps:
+    - intent: trouve_client
+    - action: utter_trouve_client
+    - action: utter_ask_client_target
+    - intent: affirm
+    - action: utter_client_acquisition
+    - intent: affirm
+    - action: utter_detailed_marketing_tips
+- story: Marketing strategy
+  steps:
+    - intent: strategie_marketing
+    - action: utter_strategie_marketing
+    - action: utter_ask_strategy_focus
+    - intent: affirm
+    - action: utter_marketing_plan
+
+- story: Managing a business
+  steps:
+    - intent: gestion_entreprise
+    - action: utter_gestion_entreprise
+
+- story: Writing a business plan
+  steps:
+    - intent: business_plan
+    - action: utter_business_plan
+    - action: utter_ask_plan_review
+    - intent: affirm
+    - action: utter_plan_review_process
+    - intent: deny
+    - action: utter_plan_templates
+- story: Project ideas
+  steps:
+    - intent: idees_projet
+    - action: utter_idees_projet
+    - action: utter_ask_idea_feedback
+    - intent: affirm
+    - action: utter_idea_evaluation
+
+- story: Event procedures
+  steps:
+    - intent: formations_procedures
+    - action: utter_formations_procedures
+
+- story: Event information
+  steps:
+    - intent: evenements_infos
+    - action: utter_evenements_infos
+    - action: utter_ask_event_registration
+    - intent: affirm
+    - action: utter_registration_process
+    - intent: deny
+    - action: utter_event_reminder
+
+# === Label Startup Flow ===
+- story: Demande label startup complète
+  steps:
+    - intent: demande_label_startup
+    - action: utter_demande_label_startup
+    - intent: affirm
+    - action: utter_contact_cellule_1275
+    - intent: deny
+    - action: utter_default
+
+# === Incubator Registration ===
+- story: Parcours inscription incubateur
+  steps:
+    - intent: procedure_inscription_incubateur
+    - action: utter_procedure_inscription_incubateur
+    - intent: affirm
+    - action: utter_ateliers_formation
+    - intent: deny
+    - action: utter_contact_cellule_1275
+
+# === Funding Path ===
+- story: Demande financement ANSEJ
+  steps:
+    - intent: subventions_ANSEJ
+    - action: utter_subventions_ANSEJ
+    - intent: financement_ASF
+    - action: utter_financement_ASF
+
+- story: Funding options exploration ASF
+  steps:
+    - intent: financement_ASF
+    - action: utter_financement_ASF
+
+# === Event Participation ===
+- story: Participation hackathon
+  steps:
+    - intent: prochain_hackathon
+    - action: utter_prochain_hackathon
+
+# === Mentoring Request ===
+- story: Demande mentorat
+  steps:
+    - intent: demander_mentor
+    - action: utter_demander_mentor
+
+# === Technical Support ===
+- story: Protection brevet
+  steps:
+    - intent: protection_brevet
+    - action: utter_protection_brevet
+- story: Création MVP
+  steps:
+    - intent: MVP_conseils
+    - action: utter_MVP_conseils
+
+# === Emergency ===
+- story: Urgence aide
+  steps:
+    - intent: urgence_help
+    - action: utter_urgence_help
+    - action: action_restart
+
+# === Feedback ===
+- story: Feedback utilisateur
+  steps:
+    - intent: feedback_bot
+    - action: utter_feedback_bot
+    - action: action_restart
+
+# === Crowdfunding Exploration ===
+- story: Crowdfunding guidance
+  steps:
+    - intent: crowdfunding_options
+    - action: utter_crowdfunding_options
+
+# === Workshop Inquiry ===
+- story: Atelier information request
+  steps:
+    - intent: ateliers_formation
+    - action: utter_ateliers_formation
+
+- story: Networking request
+  steps:
+    - intent: reseautage_entrepreneurs
+    - action: utter_reseautage_entrepreneurs

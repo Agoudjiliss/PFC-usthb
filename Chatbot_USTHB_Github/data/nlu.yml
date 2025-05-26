@@ -1,0 +1,586 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - bonjour
+    - slt
+    - salut
+    - coucou
+    - cc
+    - bjr
+    - salut mec
+    - bsr
+    - yo
+    - bonsoir
+    
+- intent: goodbye
+  examples: |
+    - au revoir
+    - à plus tard
+    - à bientôt
+    - bonne nuit
+    - bye
+    - goodbye
+    - passe une bonne journée
+    - je m'en vais
+    - see you later
+    - à demain
+    - ciao
+    - je me casse
+- intent: affirm
+  examples: |
+    - oui
+    - oui oui
+    - oui bien sûr
+    - bien sûr
+    - exactement
+    - tout à fait
+    - absolument
+    - carrément
+    - avec plaisir
+    - volontiers
+    - certainement
+    - évidemment
+    - bien évidemment
+    - tout à fait d'accord
+    - je confirme
+    - c'est ça
+    - c'est exact
+    - parfait
+    - ok
+    - okay
+    - d'accord
+    - ça marche
+    - très bien
+    - excellent
+    - je veux bien
+    - je suis d'accord
+    - je valide
+    - je confirme
+    - yes
+    - yep
+    - yeah
+    - sure
+    - ca a l'air bien
+    - ouais
+
+- intent: deny
+  examples: |
+    - non
+    - non non
+    - non merci
+    - pas du tout
+    - absolument pas
+    - jamais
+    - jamais de la vie
+    - pas question
+    - hors de question
+    - rien à faire
+    - je ne pense pas
+    - je ne crois pas
+    - je ne suis pas d'accord
+    - je refuse
+    - je ne veux pas
+    - je ne suis pas intéressé
+    - pas maintenant
+    - pas cette fois
+    - pas vraiment
+    - plutôt pas
+    - bof
+    - nan
+    - niet
+    - no
+    - nope
+    - nah 
+    - ca donne pas envie   
+
+
+- intent: mood_great
+  examples: |
+    - génial
+    - incroyable
+    - je me sens super bien
+    - magnifique
+    - je suis au top
+    - je vais tout déchirer
+    - super motivé
+    - trop bien
+    - je kiffe
+    - je suis aux anges
+    - everything is perfect
+
+- intent: mood_unhappy
+  examples: |
+    - ma journée était horrible
+    - je suis triste
+    - je me sens mal
+    - je suis déçu
+    - trop triste
+    - j'ai le blues
+    - pas top
+    - pas terrible
+    - je déprime
+    - ça va pas
+    - I'm so sad
+    - très mal
+    - nul
+
+- intent: bot_challenge
+  examples: |
+    - es-tu un robot
+    - tu es un humain
+    - je parle à un bot
+    - c'est un vrai humain
+    - t'es un chatbot
+    - are you AI
+    - is this automated
+    - t'es programmé
+    - qui est tu?
+
+- intent: startup_info
+  examples: |
+    - Puis-je avoir des informations sur les startups ?
+    - Qu'est ce qu'une startup?
+    - startups?
+    - infos startups?
+    - What's a startup?
+    - J'aimerais en savoir plus sur les startups.
+    - Dites-moi tout sur les startups.
+    - Startup
+
+- intent: startup_usthb
+  examples: |
+    - Quelles sont les différentes startup issues de l'USTHB?
+    - Quelles sont les startup présentes à l'USTHB?
+    - Quelles sont les startup qui recrutent à l'USTHB?
+    - Quels sont les domaines des startups de l'USTHB ?
+    - Les startups de l'USTHB sont-elles actives dans la technologie ?
+    - startup en usthb?
+- intent: incubateur_info
+  examples: |
+    - Qu'est ce qu'un incubateur?
+    - Y'a t'il un incubateur à l'USTHB?
+    - Incubateur
+    - Pourquoi un incubateur est important pour une start-up ?
+    - Quels services propose un incubateur ?
+    - Quel est le rôle d'un incubateur?
+    - A quoi sert un incubateur?
+    - What's an incubator?
+
+- intent: TECH_INNOV_info
+  examples: |
+    - Qu'est ce que TECH_INNOV?
+    - TECH_INNOV
+    - Infos TECH_INNOV
+    - Services offerts par TECH_INNOV ?
+    - TECH_INNOV aide-t-il les start-ups technologiques ?
+    - What's TECH_INNOV
+
+- intent: ICOSNET_info
+  examples: |
+    - Qu'est ce que ICOSNET
+    - ICOSNET
+    - Infos ICOSNET
+    - Services offerts par ICOSNET ?
+    - ICOSNET aide-t-il les start-ups technologiques ?
+    - What's ICOSNET?
+
+- intent: startup_creation
+  examples: |
+    - Comment créer une startup?
+    - Quelles sont les étapes pour créer une startup ?
+    - Comment démarrer une entreprise innovante ?
+    - Par où commencer pour lancer une startup ?
+    - Que faut-il pour créer une startup ?
+    - Quels conseils pour fonder une startup ?
+    - How to create a startup in Algeria?
+
+- intent: startup_procedure
+  examples: |
+    - Quelles sont les procédures pour la création d'une startup en Algérie?
+    - Quelles démarches faut-il suivre pour lancer une startup en Algérie ?
+    - Comment établir une startup en Algérie, et quelles en sont les procédures ?
+    - Quelles formalités dois-je remplir pour créer une startup en Algérie ?
+    - Quelles sont les obligations administratives pour lancer une startup en Algérie
+    - What are the procedures to create a startup in Algeria?
+    - procedure
+
+- intent: startup_financement
+  examples: |
+    - Comment financer sa startup?
+    - Comment obtenir des financements pour sa startup?
+    - Quelles sont les options de financement pour une startup ?
+    - Comment trouver les fonds nécessaires pour lancer sa startup ?
+    - Comment accéder aux financements pour développer sa startup ?
+    - Par quels moyens peut-on financer une startup ?
+    - Où chercher des ressources financières pour sa startup ?
+    - How to finance a startup?
+    - How to find funding for a startup?
+    - financement startup
+    - financement
+
+- intent: startup_ressources
+  examples: |
+    - Quelles sont les ressources disponibles à l'USTHB concernant les startup?
+    - Y'a t'il des ressources disponibles sur les startup?
+    - Ou puis je m'informer sur les startup à l'USTHB?
+    - Quelles sont les ressources disponibles à l'USTHB pour les étudiants concernant les Startup?
+    - Ressources Startup USTHB
+    - ressources
+- intent: ask_disponibilites_actuelles
+  examples: |
+    - Quelles sont les ressources disponibles actuellement à l'USTHB concernant les startup?
+    - Y'a t'il des ressources disponibles actuellement?
+    - disponibilités actuelles
+    - ressources disponibles actuellement
+    - actuellement
+
+- intent: startup_challenges
+  examples: |
+    - Quelles sont les difficultés fréquemment rencontrés lors de la création d'une startup?
+    - Comment surmonter les difficultés rencontrées lors de la création d'une startup?
+    - Quelles sont les principales contraintes lors du lancement d'une startup ?
+    - Quels obstacles se dressent souvent lors de la création d'une startup ?
+    - What are the most difficult challenges to create a startup?
+    - Challenge
+    - Quelles difficultés peut-on rencontrer en lançant une startup ?
+    - Quels sont les principaux défis lors de la fondation d'une startup, et comment y faire face ?
+    - Quelles étapes complexes peut-on rencontrer dans le cadre de la création d'une startup ?
+    - challenges
+
+- intent: startup_cellule
+  examples: |
+    - Qu'est ce que la cellule 1275?
+    - Cellule 1275 USTHB
+    - A quoi sert la cellule 1275?
+    - What's cell 1275?
+    - Y'a t'il une cellule dediée à l'entreprenariat à l'USTHB?
+
+- intent: startup_partenariat
+  examples: |
+    - Comment trouver des collaborateurs pour un projet de startup?
+    - Ou trouver des collaborateurs à l'USTHB pour lancer nos startup?
+    - How to find collaborators for our startup?
+    - Quelles sont les meilleures façons de trouver des alliés pour lancer une startup à l’USTHB ?
+    - Par quels moyens attirer des collaborateurs pour un projet entrepreneurial à l'USTHB ?
+    - Où chercher des partenaires pour monter une startup depuis l’environnement universitaire ?
+    - collaborateurs
+    - partenaires
+    - startup partenariat
+
+- intent: startup_investisseurs
+  examples: |
+    - Quels peuvent être les potentiels investisseurs pour le lancement d'une startup?
+    - Qui peuvent être les premiers investisseurs?
+    - Investisseurs
+    - Qui pourrait financer mon projet?
+    - Qui pourrait financer ma startup?
+    - Who could invest in the development of my startup?
+    - startup investisseurs
+
+- intent: formations_infos
+  examples: |
+    - Quelles sont les formations proposées actuellement à l'USTHB ?
+    - Donnes moi les formations proposées au sein de l'USTHB.
+    - Formations USTHB ?
+    - les formations disponibles à l'USTHB ?
+    - Toutes les formations presentes à l'USTHB.
+    - Cites moi toutes les formations disponibles
+
+- intent: formations_procedures
+  examples: |
+    - Quelles sont les procédures necessaires pour s'inscrire aux formations disponibles ?
+    - Quelles sont les étapes à suivre pour pouvoir s'inscrire au formations ?
+    - Donnes moi les procedures necessaires pour pouvoir acceder à ces formations
+    - les procedures ?
+    - Les étapes pour s'inscrire ?
+    - Steps for register ?
+    - Les étapes ?
+    - Quelles sont les procedures à faire pour les formations?  
+    - procedures formations    
+
+- intent: evenements_infos
+  examples: |
+    - Quelles sont les futurs événements en rapport avec l'entrepreunariat ?
+    - Donnes moi toutes les informations en rapport avec les futurs événements.
+    - Des futurs événements ?
+    - futur events ?
+    - informations sur des événements prévus ?
+    - Cites moi touts les événements disponibles.
+
+- intent: evenements_passes
+  examples: |
+    - Quelles sont les événements passés ?
+    - Donnes moi un résumé sur tout les événements passés.
+    - les événements passés.
+    - Past events ?
+    - Resumes moi les événements passés.
+    - Touts les événements passés .
+
+- intent: mentorat_infos
+  examples: |
+    - Pouvez-vous m'orienter vers des mentors ou experts en entrepreneuriat ?
+    - Pouvez-vous me rediriger vers des mentors ou experts en entrepreneuriat ?
+    - Redirigez moi vers des mentors ou experts en entrepreneuriat.
+    - Des mentors ou experts en entrepreneuriat à me conseiller ?
+    - Des mentors ou experts en entrepreneuriat.
+    - Des mentors ?
+    - mentor
+
+- intent: ressources_pratiques
+  examples: |
+    - Y a t-il des laboratoires disponibles pour les startups ?
+    - Y a t-il des Espaces de coworking ?
+    - Coworking spaces ?
+    - Des espaces disponibles pour les startsups ?
+
+- intent: ressources_debutant
+  examples: |
+    - Quelles sont les astuces pour commencer dans l'entrepreneuriat ?
+    - Donnes moi des astuces pour commencer dans l'entrepreneuriat ?
+    - Des astuces pour commencer dans l'entrepreneuriat ?
+    - Des astuces ?
+    - Tips ?
+    - Des conseils pour débuter ?
+    - Quelques conseils pour commencer
+    - Des conseils ?
+    - Des ressources?
+
+- intent: trouve_client
+  examples: |
+    - Comment trouver ses premiers clients ?
+    - Quels sont les meilleurs moyens d’attirer des clients rapidement ?
+    - Où chercher des clients quand on démarre ?
+    - Comment faire venir des clients sans dépenser une fortune en pub ?
+    - Les réseaux sociaux, c’est efficace pour trouver des clients ?
+    - Comment convaincre un prospect de devenir client ?
+    - Comment se faire connaître quand on part de zéro ?
+    - Quels sont les secteurs où il est plus facile de trouver des clients ?
+    - Comment utiliser le bouche-à-oreille pour attirer des clients ?
+
+- intent: strategie_marketing
+  examples: |
+    - Quelles sont les meilleures stratégies pour se démarquer sur le marché ?
+    - Comment créer une identité de marque forte ?
+    - Quels canaux marketing utiliser pour toucher son audience ?
+    - Comment attirer et fidéliser les clients efficacement ?
+    - Quelles techniques permettent d’augmenter la visibilité d’une entreprise ?
+    - Comment utiliser le digital pour se différencier de la concurrence ?
+    - Comment analyser la concurrence pour mieux se positionner ?
+    - Comment adapter sa stratégie marketing en fonction de son secteur ?
+    - Quels types de contenus fonctionnent le mieux pour attirer des clients ?
+    - Qu’est-ce qui fait qu’une pub accroche et donne envie d’acheter ?
+
+- intent: gestion_entreprise
+  examples: |
+    - Quelles sont les clés pour bien gérer une entreprise ?
+    - Comment optimiser la gestion d’une entreprise ?
+    - Quels sont les outils indispensables pour gérer une entreprise ?
+    - Comment assurer la rentabilité et la croissance d’une entreprise ?
+    - Quelles sont les erreurs à éviter en gestion d’entreprise ?
+    - Comment gérer les finances d’une entreprise efficacement ?
+    - Comment motiver et gérer une équipe ?
+    - Quels indicateurs suivre pour mesurer la performance d’une entreprise ?
+    - Comment bien organiser son temps et ses priorités en tant que dirigeant ?
+    - Quelles stratégies adopter pour développer son entreprise ?
+
+- intent: business_plan
+  examples: |
+    - Comment élaborer un business plan efficace ?
+    - Quels sont les éléments clés d’un bon business plan ?
+    - Comment structurer un business plan pour convaincre les investisseurs ?
+    - Quels sont les points essentiels à inclure dans un business plan ?
+    - Y a-t-il un modèle ou un exemple de business plan à suivre ?
+    - étapes à suivre pour un business efficace
+    - Faut-il un business plan pour une petite entreprise ?
+    - Quels sont les outils pour créer un business plan facilement ?
+    - Comment adapter un business plan pour une startup ?
+    - plan buisness
+    - plan business
+
+- intent: idees_projet
+  examples: |
+    - Quelles sont les idées de projet sûres en entrepreneuriat ?
+    - Quels sont les business les moins risqués à lancer ?
+    - Quels sont les projets avec un bon retour sur investissement ?
+    - Quels types de projets ont le plus de chances de réussir ?
+    - Comment choisir une idée de projet avec peu de risques ?
+    - best idées business ?
+    - Quelles sont les meilleures idées de projet en entrepreneuriat en 2025 ?
+    - Comment trouver une bonne idée de startup ?
+    - Quel type de projet peut-on lancer sans expérience ?
+    - idée
+    - idee
+
+
+# === Administrative ===
+- intent: demande_label_startup
+  examples: |
+    - Comment obtenir le label startup ?
+    - Quels sont les critères pour être labellisé ?
+    - Je veux faire reconnaître mon entreprise comme startup
+    - Procédure pour le label startup algérien
+    - Documents nécessaires pour la labellisation
+
+- intent: procedure_inscription_incubateur
+  examples: |
+    - Comment s'inscrire à l'incubateur TECH-INNOV ?
+    - Processus d'admission à ICOSNET
+    - Je veux rejoindre un incubateur à l'USTHB
+    - Quels documents pour intégrer l'incubateur ?
+    - Critères de sélection des incubateurs
+
+# === Funding ===
+- intent: subventions_ANSEJ
+  examples: |
+    - Comment bénéficier des subventions ANSEJ ?
+    - Je cherche un financement ANSEJ
+    - Quelles sont les conditions pour l'ANSEJ ?
+    - Montant maximum des aides ANSEJ
+    - Formation obligatoire ANSEJ
+    - ANSEJ
+    - ansej
+
+- intent: financement_ASF
+  examples: |
+    - Comment obtenir un financement de l'ASF ?
+    - Je veux candidater à l'ASF
+    - Quels projets sont éligibles à l'ASF ?
+    - Montant des prêts ASF pour startups
+    - Dossier de demande ASF
+    - ASF
+    - prêts ASF
+
+# === Events ===
+- intent: prochain_hackathon
+  examples: |
+    - Quand aura lieu le prochain hackathon ?
+    - Thème du prochain événement à l'USTHB
+    - Comment participer au hackathon ?
+    - Prix du hackathon USTHB
+    - Date limite d'inscription au hackathon
+    - hackathon
+# === Mentoring ===
+- intent: demander_mentor
+  examples: |
+    - Comment obtenir un mentor ?
+    - Je cherche un accompagnement personnalisé
+    - Qui sont les mentors disponibles ?
+    - Processus pour avoir un mentor
+    - Domaines de mentorat disponibles
+
+# === Technical ===
+- intent: protection_brevet
+  examples: |
+    - Comment protéger mon invention ?
+    - Procédure de dépôt de brevet
+    - Coût d'un brevet en Algérie
+    - Durée de validité d'un brevet
+    - Comment vérifier si mon idée est brevetable ?
+
+- intent: MVP_conseils
+  examples: |
+    - Comment créer un MVP ?
+    - Outils pour prototyper mon produit
+    - Je veux tester mon idée rapidement
+    - Exemples de MVP réussis
+    - Combien coûte un MVP ?
+
+# === Support ===
+- intent: urgence_help
+  examples: |
+    - J'ai besoin d'aide rapidement !
+    - Urgence - mon projet est bloqué
+    - Qui contacter en cas de problème ?
+    - Assistance immédiate nécessaire
+    - Problème technique critique
+
+- intent: feedback_bot
+  examples: |
+    - Je veux donner mon avis
+    - Feedback sur le chatbot
+    - Améliorations possibles
+    - J'ai une suggestion
+    - Rapport de bug
+- intent: crowdfunding_options
+  examples: |
+    - Quelles plateformes de crowdfunding utiliser ?
+    - Comment lever des fonds en Algérie ?
+    - Je veux faire du financement participatif
+    - Sites pour crowdfunding en Algérie
+    - Conseils pour une campagne réussie
+    - crowdfunding
+
+- intent: ask_booking_process
+  examples: |
+    - Comment réserver un espace via le portail USTHB Entreprendre ?
+    - Je veux comprendre le processus de réservation en ligne
+    - Étapes pour réserver du matériel sur le portail Entreprendre
+    - Guide pour utiliser le système de réservation de l'USTHB
+    - Comment fonctionne la réservation en ligne des labos ?
+    - Je cherche à réserver un espace de coworking, comment faire ?
+    - Processus complet pour une réservation sur USTHB Entreprendre
+    - Où trouver le calendrier des disponibilités des salles ?
+    - Faut-il un compte spécial pour réserver des ressources ?
+    - Combien de temps à l'avance faut-il réserver ?
+    - Puis-je annuler/modifier une réservation ?
+    - Y a-t-il des tutoriels pour utiliser le portail ?
+    - Quels documents faut-il pour faire une réservation ?
+    - La réservation est-elle instantanée ou faut-il validation ?
+    - Comment savoir si ma réservation a été confirmée ?
+    - Problèmes fréquents lors des réservations en ligne
+    - comprendre le processus de réservation en ligne
+    - reservation
+    - en ligne
+    - réservation en ligne
+ 
+- intent: ateliers_formation
+  examples: |
+    - Quels ateliers sont disponibles ce mois-ci ?
+    - Je cherche des formations en entrepreneuriat
+    - Programme des ateliers USTHB
+    - Comment s'inscrire aux ateliers ?
+    - Thèmes des prochaines formations
+- intent: reseautage_entrepreneurs
+  examples: |
+    - Comment rencontrer d'autres entrepreneurs ?
+    - Où trouver des partenaires à l'USTHB ?
+    - Je cherche un réseau startup
+    - Événements de networking
+    - Groupes Telegram pour startups    
+    - Des partenaires?
+- intent: choose_contact
+  examples: |
+    - le email
+    - email
+    - phone 
+    - telephone 
+    - le téléphone
+    - contact
+    - le contact
+    - coordonnées complètes
+    - je choisis l'email
+    - je choisis le téléphone
+    - je choisis le contact
+    - je veux les coordonnées complètes
+    - je veux connaitre les coordonnées
+    - je préfère l'email
+    - je préfère le téléphone
+- intent: choose_website
+  examples: |
+    - le site web
+    - site web
+    - site 
+    - website 
+    - le site 
+    - je veux le website
+    - je veux le site web
+    - je choisis le site web
+    - je choisis le site
+    - je choisis le web site
+    - je veux connaitre le site
+    - je préfère le site web

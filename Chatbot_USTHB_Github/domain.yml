@@ -1,0 +1,721 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - startup_info
+  - startup_usthb
+  - incubateur_info
+  - TECH_INNOV_info
+  - ICOSNET_info
+  - startup_creation
+  - startup_procedure
+  - startup_financement
+  - startup_ressources
+  - startup_challenges
+  - startup_cellule
+  - startup_partenariat
+  - startup_investisseurs
+  - formations_infos
+  - formations_procedures
+  - evenements_infos
+  - evenements_passes
+  - mentorat_infos
+  - ressources_pratiques
+  - ressources_debutant
+  - trouve_client
+  - strategie_marketing
+  - gestion_entreprise
+  - business_plan
+  - idees_projet
+  - nlu_fallback
+  - demande_label_startup
+  - procedure_inscription_incubateur
+  - subventions_ANSEJ
+  - financement_ASF
+  - prochain_hackathon
+  - demander_mentor
+  - protection_brevet
+  - MVP_conseils
+  - urgence_help
+  - feedback_bot
+  - crowdfunding_options
+  - ateliers_formation
+  - reseautage_entrepreneurs
+  - ask_booking_process
+  - ask_disponibilites_actuelles
+  - choose_contact
+  - choose_website
+responses:
+
+
+  utter_greet:
+  - text: "Bonjour! Comment peut on vous aider?"
+
+  utter_cheer_up:
+  - text: "Voici quelque chose pour vous remonter le moral :"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Est-ce que cela vous a aidé ?"
+
+  utter_happy:
+  - text: "Génial, continuez comme ça !"
+
+  utter_goodbye:
+  - text: "Au revoir ! À bientôt."
+
+  utter_iamabot:
+  - text: "Oui! Je suis un chatbot!"
+
+  utter_startup_info:
+    - text: "Une start-up est une jeune entreprise innovante avec un fort potentiel\
+        \ de développement.\n\nCes entreprises évoluent dans le secteur des nouvelles\
+        \ technologies, souvent sur internet.\n\nGrâce au web, les start-up ont aujourd’hui\
+        \ la possibilité de s’adresser très rapidement à de gros marchés.\n\nUn nouveau\
+        \ produit ou service innovant peut donc rapidement toucher une clientèle importante,\
+        \ et donc générer une forte croissance, notamment grâce à la scalabilité du\
+        \ modèle."
+  utter_startup_usthb:
+    - text: "L'USTHB est un vivier d'innovation, avec plusieurs startups issues de\
+        \ projets étudiants et de collaborations avec ses incubateurs, notamment TECH-INNOV\
+        \ et ICOSNET.\n\nCes startups couvrent divers domaines tels que la mécanique,\
+        \ le génie civil, la biologie, et les technologies numériques.\n\nEn 2023,\
+        \ l'université a déposé 14 brevets d'invention pour des projets innovants,\
+        \ et elle soutient activement plus de 400 projets susceptibles de devenir\
+        \ des startups.\n\nParmi ces projets, environ 80 sont incubés par TECH-INNOV\
+        \ et 31 par ICOSNET.\n\nCes initiatives montrent l'engagement de l'USTHB dans\
+        \ la promotion de l'entrepreneuriat et l'innovation."
+  utter_incubateur_info:
+    - text: "Un incubateur est une structure d’accueil et d’accompagnement pour la\
+        \ création de startup. Son rôle est d'aider les porteurs de projets à formaliser\
+        \ leurs idées et à valider la faisabilité des projets. A l'USTHB, il y'a deux\
+        \ principaux incubateurs: TECH_INNOV et ICOSNET."
+  utter_ICOSNET_info:
+    - text: 'ICOSNET Incubator est un incubateur axé sur l’innovation sociale et
+        l’accompagnement des entreprises à fort impact sociétal. Ils offrent un soutien
+        stratégique, des espaces collaboratifs, et un réseau diversifié d’acteurs
+        sociaux (ONG, experts en développement durable). Leurs programmes incluent
+        des formations sur la durabilité et la responsabilité sociale, des événements
+        de sensibilisation, et des outils pour évaluer l’impact. En plus, ils facilitent
+        l’accès à des financements sociaux et cultivent une communauté collaborative
+        pour maximiser l’impact collectif des entrepreneurs.'
+  utter_TECH_INNOV_info:
+    - text: "TECH-INNOV Incubator est un centre d'incubation dédié aux start-ups\
+        \ technologiques. Ils offrent un accompagnement stratégique personnalisé,\
+        \ un accès à des infrastructures modernes (espaces collaboratifs, laboratoires),\
+        \ et un réseau d'experts et de mentors. Ils organisent des formations, des\
+        \ événements de networking, et facilitent l'accès au financement (investisseurs,\
+        \ subventions). Même après l'incubation, ils continuent de soutenir leurs\
+        \ start-ups pour garantir leur succès à long terme."
+  utter_startup_creation:
+    - text: "Créer une startup nécessite de suivre plusieurs étapes clés :\n1. Identifiez\
+        \ une idée innovante et vérifiez sa faisabilité sur le marché.\n2. Rédigez\
+        \ un business plan détaillé incluant objectifs, budget, et plan marketing.\n\
+        3. Trouvez des partenaires et/ou assemblez une équipe.\n4. Inscrivez-vous\
+        \ dans un incubateur pour bénéficier de soutien et de ressources.\n5. Cherchez\
+        \ des financements (investisseurs, subventions).\n6. Développez un MVP (Minimum\
+        \ Viable Product) pour tester l'idée avant de lancer pleinement.\n7. Lancez\
+        \ votre startup en adaptant et améliorant vos services ou produits selon les\
+        \ retours du marché."
+  utter_startup_procedure:
+    - text: "Pour être considérée comme une startup en Algérie, une entreprise doit\
+        \ respecter les critères suivants :\n– Être en existence depuis moins de 8\
+        \ ans.\n– Avoir un Business Model innovant reposant sur des produits, des\
+        \ services ou un concept original.\n– Avoir un chiffre d’affaires annuel inférieur\
+        \ au montant fixé par le comité national.\n– Avoir un capital social détenu\
+        \ à au moins 50 % par des personnes physiques, des fonds d’investissement\
+        \ agréés ou d’autres startups.\n– Avoir un fort potentiel de croissance.\n\
+        – Avoir moins de 250 employés."
+  utter_startup_financement:
+    - text: "Financer sa startup en Algérie peut se faire de plusieurs manières :\n\
+        - En obtenant le label 'Startup' via le portail startup.dz, vous pouvez bénéficier\
+        \ d'exonérations fiscales, d'accompagnement, et d'accès à des financements\
+        \ spécifiques.\n- L'ASF (Agence Spécialisée dans le Financement) propose des\
+        \ financements allant de 2 à 20 millions de dinars pour les startups labélisées.\
+        \ Elle agit également comme partenaire en partageant les bénéfices et les\
+        \ risques.\n- En vous tournant vers des incubateurs et accélérateurs. Ces\
+        \ structures offrent non seulement un financement, mais aussi un accompagnement\
+        \ stratégique pour accompagner votre projet. À l'USTHB, il y a TECH_INNOV\
+        \ Incubator et ICOSNET Incubator par exemple."
+  utter_startup_ressources:
+    - text: "L'Université des Sciences et de la Technologie Houari Boumediène (USTHB)\
+        \ offre plusieurs ressources pour les étudiants intéressés par les startups\
+        \ :\n\n**Incubateurs :**\nL'USTHB dispose d'incubateurs tels que \"Tech Innov\"\
+        \ et \"Icosnet\", qui accompagnent les étudiants dans le développement de\
+        \ leurs projets innovants.\n\n**Journées de sensibilisation :**\nL'université\
+        \ organise des événements pour sensibiliser les étudiants à l'entrepreneuriat\
+        \ et les aider à transformer leurs idées en startups.\n\n**Accompagnement\
+        \ juridique :**\nLes étudiants porteurs de projets bénéficient d'un soutien\
+        \ juridique pour protéger leurs idées et brevets.\n\n**Semaine de l'entrepreneuriat\
+        \ :**\nDes activités spécifiques sont organisées pour les étudiants sortants,\
+        \ afin de les guider dans la création de micro-entreprises ou startups.\n\n\
+        **Accès aux brevets :**\nL'USTHB facilite le dépôt de brevets d'invention\
+        \ pour les projets innovants des étudiants, en collaboration avec l'Institut\
+        \ national de la propriété industrielle (INAPI)."
+  utter_startup_challenges:
+  - text: "Créer une startup est une aventure passionnante, mais elle comporte son lot de défis. Voici certaines difficultés courantes et des conseils pour les surmonter :\n\n**1. Trouver une idée viable**\nProblème : Il peut être difficile de transformer une idée en un produit ou service qui répond réellement à un besoin du marché.\nConseil : Faites des études de marché approfondies et recueillez des retours d'utilisateurs potentiels pour valider votre idée avant de vous lancer.\n\n**2. Manque de financement**\nProblème : Obtenir les fonds nécessaires pour démarrer et développer votre projet peut être compliqué.\nConseil : Explorez différentes sources de financement : autofinancement, investisseurs privés, incubateurs, ou programmes de subventions locaux comme ceux en Algérie (par exemple, le label \"Startup\" ou l'ASF).\n\n**3. Choix d'une équipe adaptée**\nProblème : Construire une équipe compétente et alignée sur les objectifs de la startup peut être un challenge.\nConseil : Recrutez des personnes partageant votre vision et complétez vos compétences. Assurez-vous de définir clairement les rôles de chacun.\n\n**4. Affronter la bureaucratie**\nProblème : Les démarches administratives et les procédures légales peuvent être longues et compliquées.\nConseil : Documentez-vous sur les obligations légales et, si possible, faites appel à un conseiller juridique ou un expert pour vous guider.\n\n**5. Créer une clientèle fidèle**\nProblème : Attirer et conserver des clients dans un marché compétitif est souvent ardu.\nConseil : Misez sur une stratégie marketing efficace et sur un excellent service client pour fidéliser vos premiers utilisateurs.\n\n**6. Gestion du stress et de l'incertitude**\nProblème : La pression de faire réussir une startup peut être source de stress.\nConseil : Établissez des objectifs réalisables, divisez les tâches en étapes claires et entourez-vous de mentors pour bénéficier d’un soutien moral et stratégique.\n\nBesoin d'aide personnalisée ?\n\nSi vous rencontrez un défi spécifique :\n✅ Mentorat : Contactez un expert TECH-INNOV\n✅ Ateliers : Participez à nos formations thématiques\n✅ Réseautage : Rejoignez des groupes de travail d'étudiants"
+  utter_startup_cellule:
+    - text: "Une structure universitaire ou institutionnelle algérienne dédiée à\
+        \ l’accompagnement des startups et des porteurs de projets innovants, notamment\
+        \ au sein de l’USTHB (Université des Sciences et de la Technologie Houari\
+        \ Boumediène).\n\n**1. Mission Principale :**\n- Offrir un support administratif,\
+        \ technique et financier aux étudiants et entrepreneurs souhaitant créer des\
+        \ startups.\n- Faciliter l’accès aux ressources (formations, financements,\
+        \ mentorat, espaces de coworking).\n- Orienter vers des partenaires (incubateurs,\
+        \ investisseurs, institutions publiques).\n\n**2. Pourquoi \"1275\" ?**\n\
+        Le numéro 1275 pourrait correspondre à :\n- Un code interne de l’université\
+        \ pour identifier cette cellule.\n- Une référence à un programme national\
+        \ (ex : Plan de développement économique algérien, décret, ou appel à projets).\n\
+        - Exemple : En Algérie, certaines structures utilisent des numéros administratifs\
+        \ pour simplifier leur identification (ex : \"Cellule 1275\" = \"Cellule dédiée\
+        \ à l’innovation et aux startups\").\n\n**3. Services Proposés (hypothèses\
+        \ basées sur le contexte du projet) :**\n- Aide à la rédaction de business\
+        \ plans.\n- Informations sur les subventions et appels à projets (ex : ANSEJ,\
+        \ CNAC, dispositifs universitaires).\n- Organisation d’événements (hackathons,\
+        \ pitchs, rencontres avec des mentors).\n- Mise en relation avec des experts\
+        \ juridiques ou techniques."
+  utter_startup_partenariat:
+    - text: "Pour trouver des collaborateurs pour une startup depuis l'USTHB, voici\
+        \ quelques pistes intéressantes :\n\n**Participer aux événements universitaires\
+        \ :**\nL'USTHB organise régulièrement des hackathons, des conférences et des\
+        \ ateliers liés à l'entrepreneuriat. Ces événements sont des occasions idéales\
+        \ pour rencontrer des étudiants et des professionnels partageant vos intérêts.\n\
+        \n**Rejoindre les clubs et associations :**\nL'université dispose de clubs\
+        \ dédiés à l'innovation et à la technologie. Ces groupes sont souvent composés\
+        \ d'étudiants motivés et compétents, prêts à collaborer sur des projets innovants.\n\
+        \n**Utiliser les réseaux sociaux professionnels :**\nPlateformes comme LinkedIn\
+        \ peuvent être utilisées pour rechercher des profils intéressants parmi les\
+        \ étudiants et anciens élèves de l'USTHB. Vous pouvez également publier des\
+        \ annonces pour attirer des talents.\n\n**Collaborer avec les incubateurs\
+        \ universitaires :**\nLes incubateurs comme \"Tech Innov\" et \"Icosnet\"\
+        \ à l'USTHB peuvent vous aider à entrer en contact avec des experts et des\
+        \ étudiants intéressés par les startups.\n\n**Créer des partenariats avec\
+        \ les départements académiques :**\nLes départements de l'USTHB, notamment\
+        \ ceux liés à l'informatique, à l'ingénierie et à la gestion, peuvent vous\
+        \ aider à identifier des étudiants talentueux pour votre projet.\n\n**Utiliser\
+        \ des plateformes spécialisées :**\nDes outils comme IdeasVoice ou des forums\
+        \ dédiés à l'entrepreneuriat peuvent également être utiles pour trouver des\
+        \ collaborateurs."
+  utter_startup_investisseurs:
+    - text: "Pour le lancement d'un projet startup universitaire, plusieurs types\
+        \ d'investisseurs et de sources de financement peuvent être envisagés :\n\n\
+        **Incubateurs et accélérateurs :**\nCes structures, souvent liées aux universités,\
+        \ offrent un financement initial ainsi qu'un accompagnement stratégique. Par\
+        \ exemple, des incubateurs comme \"Tech Innov\" à l'USTHB.\n\n**Business Angels\
+        \ :**\nCe sont des investisseurs individuels qui soutiennent des projets innovants\
+        \ en échange d'une participation au capital. Ils sont souvent intéressés par\
+        \ les startups issues du milieu universitaire.\n\n**Fonds publics et subventions\
+        \ :**\nEn Algérie, des programmes comme l'Agence Nationale de Soutien à l'Emploi\
+        \ des Jeunes (ANSEJ) ou le Fonds d'Appui à l'Innovation peuvent financer des\
+        \ projets universitaires.\n\n**Partenariats avec des entreprises :**\nCertaines\
+        \ grandes entreprises cherchent à investir dans des projets innovants pour\
+        \ diversifier leurs activités ou accéder à de nouvelles technologies.\n\n\
+        **Crowdfunding :**\nLes plateformes de financement participatif permettent\
+        \ de lever des fonds auprès d'un large public, souvent intéressé par des projets\
+        \ novateurs.\n\n**Banques et institutions financières :**\nCertaines banques\
+        \ proposent des prêts ou des lignes de crédit spécifiquement pour les startups."
+  utter_formations_infos:
+    - text: "​L'Université des Sciences et de la Technologie Houari-Boumediene (USTHB)\
+        \ propose une variété de formations et d'activités visant à renforcer les\
+        \ compétences en management, entrepreneuriat et innovation. Parmi celles-ci\
+        \ :​\n\nFormations en management et entrepreneuriat : L'USTHB offre des programmes\
+        \ académiques dédiés au management et à l'entrepreneuriat, incluant des modules\
+        \ sur la gestion de projet, le développement d'affaires et la création d'entreprises\
+        \ innovantes.​\n\nIdéathons et workshops dans le Hall Start-up : L'université\
+        \ organise régulièrement des idéathons et des ateliers interactifs dans son\
+        \ espace dédié, le Hall Start-up, favorisant la créativité, l'innovation et\
+        \ le travail collaboratif entre étudiants de différentes disciplines.​\n\n\
+        Formations à la préparation de la demande de label \"Projet Innovant\" : Des\
+        \ sessions sont proposées pour accompagner les étudiants dans la constitution\
+        \ de dossiers solides en vue d'obtenir le label \"Projet Innovant\", essentiel\
+        \ pour le financement et la reconnaissance de leurs projets.​\n\nCoaching\
+        \ individuel (One-to-One) : Les étudiants bénéficient de séances de coaching\
+        \ personnalisées avec des experts pour les guider dans le développement de\
+        \ leurs projets entrepreneuriaux, en abordant des aspects tels que la stratégie,\
+        \ le marketing et la gestion financière.​\n\nPréparation à la soutenance de\
+        \ start-up (rédaction du Business Model Canvas et pitch deck) : Des ateliers\
+        \ spécifiques sont dédiés à la rédaction du Business Model Canvas (BMC) et\
+        \ à la création de pitch decks percutants, préparant ainsi les étudiants à\
+        \ présenter efficacement leurs projets devant des investisseurs et des jurys.​\n\
+        \nPromotion de la créativité et de l'innovation : L'USTHB met en place des\
+        \ initiatives pour encourager la pensée créative et l'innovation, notamment\
+        \ à travers des concours, des hackathons et des collaborations avec des entreprises\
+        \ et des institutions de recherche.​\n\nWorkshops en UI/UX : Des formations\
+        \ spécialisées en design d'interface utilisateur (UI) et en expérience utilisateur\
+        \ (UX) sont proposées pour aider les étudiants à concevoir des produits numériques\
+        \ intuitifs et attractifs.​\n\nAnalyse des données d'un questionnaire : L'université\
+        \ offre des formations sur les méthodes statistiques et les outils logiciels\
+        \ permettant d'analyser efficacement les données recueillies via des questionnaires,\
+        \ compétences essentielles en recherche et en marketing.​\n\nFormation aux\
+        \ compétences intrinsèques des métiers de la science et de la santé : Des\
+        \ programmes sont conçus pour développer des compétences spécifiques aux carrières\
+        \ scientifiques et médicales, telles que la communication scientifique, l'éthique\
+        \ de la recherche et la gestion de projets de santé.​\n\nAteliers et coaching\
+        \ : En complément des formations académiques, l'USTHB propose divers ateliers\
+        \ pratiques et séances de coaching pour renforcer les compétences professionnelles\
+        \ et personnelles des étudiants, les préparant ainsi à intégrer le marché\
+        \ du travail avec succès.​\n\nCes initiatives témoignent de l'engagement de\
+        \ l'USTHB à fournir un environnement propice au développement des compétences\
+        \ entrepreneuriales et managériales de ses étudiants, les préparant à relever\
+        \ les défis du monde professionnel contemporain."
+  utter_formations_procedures:
+    - text: 'Les procédures à suivre sont toutes réunnis dans un docs form , il faudra
+        le remplir avec toutes les informations necéssaires.'
+  utter_evenements_infos:
+    - text: "Conférences à Venir\nAtelier \"Scaling Your Ads & Increasing Profits\"\
+        \n\nDate : 19 mars 2025 à 22h00\n\nLieu : En ligne via Google Meet\n\nIntervenant\
+        \ : M. Yousfi Mouataz\n\nRésumé : Stratégies pour optimiser les campagnes\
+        \ publicitaires et augmenter les profits, dans le cadre de l'Algeria Job Summit.\n\
+        \nConférence sur l'Innovation\n\nDate : 16 décembre 2024 à 9h30\n\nLieu :\
+        \ Startup's Hall, USTHB\n\nIntervenant : Professeur AOURAG Hafid\n\nRésumé\
+        \ : Discussion sur le thème \"Le Triz ou l’Art d’innover\", explorant des\
+        \ méthodes pour favoriser l'innovation."
+  utter_evenements_passes:
+    - text: "Conférences Passées\nConférence \"Le Triz ou l’Art d’innover\"\n\nDate\
+        \ : 16 décembre 2024\n\nLieu : Startup's Hall, USTHB\n\nIntervenant : Professeur\
+        \ AOURAG Hafid, ex-Directeur Général de la DGRSDT\n\nRésumé : Présentation\
+        \ de la méthode TRIZ pour stimuler l'innovation et résoudre des problèmes\
+        \ techniques de manière inventive.\n\nSemaine Mondiale de l'Entrepreneuriat\n\
+        \nDate : 12 au 14 novembre 2023\n\nLieu : Startup's Hall, USTHB\n\nRésumé\
+        \ : Série de panels et d'ateliers pratiques animés par des experts de l'association\
+        \ DJAZPORA, visant à accompagner les étudiants dans la transformation d'une\
+        \ idée innovante en entreprise solide."
+  utter_mentorat_infos:
+    - text: "\U0001F3E2 \U0001F31F Incubateur Tech-Innov USTHB\n➡️ Un accompagnement\
+        \ personnalisé pour structurer et développer ton projet \U0001F680\n➡️ Accès\
+        \ à un réseau d’experts et de mentors en entrepreneuriat \U0001F91D\n➡️ Des\
+        \ formations et workshops pour affiner ton Business Model \U0001F4DD\n\n\U0001F3DB\
+        \ \U0001F4CD Start-up's Hall – Le hub des entrepreneurs de l’USTHB\n➡️ Un\
+        \ espace dédié aux startups étudiantes \U0001F3E2\n➡️ Des événements, networking\
+        \ & ideathons pour booster ton projet \U0001F3AF\n➡️ Un partenariat avec le\
+        \ Centre d’Appui à la Technologie et à l’Innovation (CATI) \U0001F4E1\n\n\U0001F4DA\
+        \ \U0001F4C8 Centre de Développement de l’Entrepreneuriat (CDE USTHB)\n➡️\
+        \ Des formations pour apprendre à gérer une entreprise \U0001F4CA\n➡️ Des\
+        \ coachs et mentors pour t’accompagner dans ton parcours \U0001F680\n➡️ Un\
+        \ accès aux financements et opportunités de subventions \U0001F4B0\n\n\U0001F31F\
+        \ Les mentors et experts qui t’accompagnent :\n\U0001F468‍\U0001F3EB Amouri\
+        \ Abdessamed – Expert en entrepreneuriat et innovation, il anime des formations\
+        \ et accompagne les startups dans leur structuration et développement.\n\n\
+        \U0001F468‍\U0001F52C Aourag Hafid – Chercheur et spécialiste en innovation\
+        \ technologique, il aide les étudiants à transformer leurs idées scientifiques\
+        \ en projets concrets.\n\n\U0001F468‍\U0001F3EB Pr Hemdane – Professeur et\
+        \ expert en stratégie entrepreneuriale, il guide les porteurs de projets dans\
+        \ l'élaboration de leur business model et leur stratégie de marché.\n\n\U0001F468\
+        ‍\U0001F4BC Saada Wissam – Mentor en entrepreneuriat, il propose des conseils\
+        \ pratiques pour la gestion des startups et le développement commercial.\n\
+        \n\U0001F469‍\U0001F3EB Mme Moumen Amel – Experte en gestion et innovation,\
+        \ elle accompagne les jeunes entrepreneurs dans la structuration de leurs\
+        \ projets et la rédaction de leur BMC & Pitch Deck.\n\n\U0001F468‍\U0001F3EB\
+        \ Abdelmalek Chetta – Mentor et expert en entrepreneuriat, il accompagne les\
+        \ startups dans le développement de stratégies innovantes et l’optimisation\
+        \ de leurs modèles économiques.\n\n\U0001F30D \U0001F91D Collaborations &\
+        \ Opportunités\n➡️ Partenariats avec Djazpora Innovation Day et d'autres acteurs\
+        \ de l’innovation en Algérie \U0001F1E9\U0001F1FF\n➡️ Programmes de formation\
+        \ en pitch deck, BMC et marketing digital \U0001F4E2\n➡️ Opportunité de participer\
+        \ à des hackathons et compétitions \U0001F4A1\U0001F525"
+  utter_ressources_pratiques:
+    - text: "Oui ! , il est tout un espace pour les startups et les entreprises au\
+        \ sein de l'USTHB , c'est le hall start-up ."
+  utter_ressources_debutant:
+    - text: "\U0001F4A1 Bienvenue dans le monde de l'entrepreneuriat ! \U0001F680\
+        \nTu veux te lancer mais tu ne sais pas par où commencer ? Voici quelques\
+        \ astuces clés pour t’aider à bien démarrer :\n\n\U0001F3AF 1. Trouve une\
+        \ idée solide\nIdentifie un problème réel et cherche une solution innovante.\n\
+        \nAnalyse la demande du marché et vois si ton idée répond à un vrai besoin.\n\
+        \nTeste ton concept avec des amis, des collègues ou via des sondages.\n\n\U0001F4DD\
+        \ 2. Valide ton idée avec un Business Model Canvas (BMC)\nQui sont tes clients\
+        \ potentiels ?\n\nQuel est ton proposition de valeur unique ?\n\nQuels seront\
+        \ tes canaux de distribution ?\n\nComment vas-tu générer des revenus ?\n\n\
+        \U0001F525 3. Développe un état d’esprit entrepreneurial\nSois curieux et\
+        \ apprends sans cesse.\n\nAccepte les échecs comme des leçons.\n\nSois persévérant\
+        \ et adaptable.\n\n\U0001F4A1 4. Débute petit, mais pense grand !\nNe cherche\
+        \ pas la perfection : lance un prototype (MVP) et améliore-le avec les retours\
+        \ clients.\n\nTeste ton marché avant d’investir trop de temps et d’argent.\n\
+        \n\U0001F91D 5. Entoure-toi des bonnes personnes\nTrouve un mentor ou un coach\
+        \ qui peut t’accompagner.\n\nParticipe à des workshops, hackathons et conférences.\n\
+        \nRejoins une communauté d’entrepreneurs pour échanger et apprendre.\n\n\U0001F4B0\
+        \ 6. Gère bien tes finances\nFais un budget simple : combien te faut-il pour\
+        \ démarrer ?\n\nCherche des sources de financement (subventions, incubateurs,\
+        \ investisseurs).\n\nÉvite les grosses dépenses inutiles au début.\n\n\U0001F4E2\
+        \ 7. Apprends à vendre ton idée\nPrépare un pitch deck clair et impactant.\n\
+        \nPratique ton pitch en quelques minutes.\n\nMets en avant les bénéfices de\
+        \ ton produit/service.\n\n\U0001F680 8. Passe à l’action !\nNe reste pas bloqué\
+        \ dans la théorie : lance-toi !\n\nTeste, adapte, améliore et persévère.\n\
+        \n\U0001F449 Prêt à entreprendre ? \U0001F525 Fais le premier pas dès aujourd’hui\
+        \ ! \U0001F4AA✨"
+
+  utter_trouve_client:
+    - text: |
+        Pour trouver des clients, commence par identifier ton public cible et comprendre où il se trouve (réseaux sociaux, forums, événements). 
+        Utilise le marketing digital (référencement, contenu, publicité ciblée) et le réseautage (partenariats, recommandations). 
+        Les réseaux sociaux et le bouche-à-oreille restent puissants, tout comme les offres attractives et les témoignages clients. 
+        L’important est d’être visible, de créer du lien et de prouver la valeur de ton offre avec des résultats concrets.
+        
+  utter_strategie_marketing:
+    - text: 'Pour se démarquer, une entreprise doit avoir une identité forte (nom,
+        logo, message unique) et proposer une valeur ajoutée claire. Une bonne stratégie
+        marketing repose sur une connaissance approfondie du public cible, l’utilisation
+        de canaux adaptés (réseaux sociaux, SEO, publicité, emailing) et des actions
+        différenciantes comme le storytelling, le marketing de contenu ou l’engagement
+        communautaire. La fidélisation est aussi clé : offrir une expérience client
+        irréprochable et utiliser des programmes de fidélité ou du marketing relationnel
+        permet de se distinguer durablement. Enfin, il est essentiel d’analyser régulièrement
+        les résultats pour ajuster la stratégie et maximiser son impact.'
+  utter_gestion_entreprise:
+    - text: 'Une bonne gestion d’entreprise repose sur plusieurs piliers : une organisation
+        efficace du travail, une gestion financière rigoureuse (suivi des coûts, trésorerie,
+        rentabilité), une stratégie marketing et commerciale adaptée, ainsi qu’une
+        bonne gestion des ressources humaines pour motiver et encadrer son équipe.
+        Il est aussi essentiel de suivre des indicateurs de performance (chiffre d’affaires,
+        marges, satisfaction client) et d’adopter des outils adaptés (logiciels de
+        gestion, CRM, automatisation). Une entreprise bien gérée est celle qui sait
+        anticiper les défis, s’adapter aux évolutions du marché et prendre des décisions
+        stratégiques basées sur des données concrètes.'
+  utter_business_plan:
+    - text: 'Un business plan efficace doit contenir plusieurs éléments clés. D’abord,
+        une présentation du projet expliquant son objectif et sa valeur ajoutée. Ensuite,
+        une étude de marché pour analyser la demande, la concurrence et les opportunités.
+        Il faut aussi un modèle économique clair décrivant les sources de revenus
+        et les coûts. Une stratégie marketing est essentielle pour expliquer comment
+        attirer et fidéliser les clients. Enfin, une partie financière doit inclure
+        un prévisionnel (chiffre d’affaires, coûts, rentabilité) et un plan d’action
+        détaillant les étapes pour concrétiser le projet. Un business plan bien structuré
+        et basé sur des données solides est indispensable pour convaincre investisseurs
+        et partenaires.'
+  utter_idees_projet:
+    - text: 'Pour trouver une bonne idée de projet, commencez par identifier un problème
+        non résolu ou une tendance porteuse. Les idées de projet les plus sûres sont
+        celles avec une demande stable et peu d’investissement initial, comme les
+        services freelances (rédaction, graphisme, développement web), l’e-commerce
+        de niche, la formation en ligne, les services aux entreprises (consulting,
+        gestion de réseaux sociaux) et les franchises bien établies. L’essentiel est
+        de viser un marché avec une forte demande et un modèle éprouvé'
+  utter_demande_label_startup:
+    - text: " Pour obtenir le label 'Startup' en Algérie :\n\n1. Vérifiez que votre entreprise remplit les critères :\n   - Moins de 8 ans d'existence\n   - Modèle économique innovant\n   - Fort potentiel de croissance\n2. Postulez via le portail [startup.dz](https://startup.dz)\n3. Joignez un business plan et une preuve d'innovation (brevet, prototype).\n\n Besoin d'aide ? La Cellule 1275 organise des ateliers pour monter votre dossier !"
+
+  utter_procedure_inscription_incubateur:
+  - text: |
+      Pour intégrer TECH-INNOV ou ICOSNET :
+
+      1. Préparez :
+         - Un pitch deck (10 diapos max)
+         - Un Business Model Canvas
+         - Une vidéo de présentation (optionnel)
+      2. Postulez en ligne sur leurs sites ou déposez votre dossier au Hall Start-up.
+      3. Entretien avec un jury sous 15 jours.
+
+      Conseil : Participez à leurs événements pour booster vos chances !
+
+      Êtes-vous prêt à commencer ce processus ?
+      
+  utter_contact_cellule_1275:
+    - text: " **Contacts Cellule 1275** :\n\n- 📍 Localisation : Bâtiment C, 1er étage (USTHB)\n- 📧 Email : cellule1275@usthb.dz\n- ☎️ Tél : +213 XX XX XX XX\n- 🕒 Horaires : 8h30-16h (dimanche à jeudi)\n"
+
+  # === Financements ===
+  utter_subventions_ANSEJ:
+    - text: " **Subventions ANSEJ** :\n\n- Montant : Jusqu'à 5 millions DZD\n- Conditions :\n  - Âge < 40 ans\n  - Projet éligible (liste sur [ANSEJ](https://www.ansej.org.dz)\n- Étapes :\n  1. Remplir le formulaire en ligne\n  2. Formation obligatoire\n  3. Dépôt du dossier physique"
+
+  utter_financement_ASF:
+    - text: " **Financement ASF** :\n\n- Pour startups labellisées uniquement\n- Montant : 2 à 20 millions DZD\n- Critères :\n  - Projet innovant\n  - Potentiel de rentabilité\n- Dossier :\n  - Business plan détaillé\n  - Étude de marché\n  - Prévisionnel sur 3 ans\n\nℹ Plus d'infos : [startup.dz/financement](https://startup.dz/financement)"
+
+  utter_crowdfunding_options:
+    - text: " **Plateformes de crowdfunding en Algérie** :\n\n1. [Yomken](https://yomken.com) (projets innovants)\n2. [Zoomaal](https://zoomaal.com) (monde arabe)\n3. [Ulule](https://ulule.com) (international)\n\n💡 Conseils :\n- Lancez une campagne courte (30-45 jours)\n- Offrez des contreparties attractives\n- Communiquez sur les réseaux sociaux !"
+
+  # === Événements ===
+  utter_prochain_hackathon:
+    - text: " **Prochain hackathon à l'USTHB** :\n\n- Thème : 'IA & Développement durable'\n- Date : 15-17 juin 2024\n- Lieu : Hall Start-up\n- Prix : 500k DZD + incubation\n\n Inscriptions : [techinnov.usthb.dz/hackathon](https://techinnov.usthb.dz)\n\n Date limite : 1er juin !"
+
+  utter_ateliers_formation:
+    - text: " **Ateliers ce mois-ci** :\n\n1. **Pitch Deck Parfait**\n   - 5 juin. 2025, 14h\n   - Intervenant : Mme Moumen (experte en startups)\n2. **Protéger son idée**\n   - 12 nov. 2024, 10h\n   - Avec l'INAPI\n3. **Business Model Canvas**\n   - 20 nov. 2024, 9h\n\n Inscription obligatoire : [form.jotform.com/cellule1275](https://form.jotform.com)."
+
+  # === Mentorat ===
+  utter_demander_mentor:
+    - text: " **Demander un mentor** :\n\n1. Remplissez [ce formulaire](https://form.jotform.com/mentor1275)\n2. Choisissez votre domaine :\n   - Marketing (M. Saada)\n   - Technique (Pr. Aourag)\n   - Juridique (Me Bensalah)\n3. 1ère séance sous 7 jours !\n\n Offre réservée aux projets incubés à l'USTHB."
+     # === Techniques ===
+  utter_protection_brevet:
+    - text: " **Protéger une invention** :\n\n1. Vérifiez la nouveauté via [INAPI](https://inapi.org)\n2. Déposez un brevet :\n   - Dossier technique détaillé\n   - Frais : ~30k DZD\n3. Durée : 20 ans (renouvelable)\n\n L'USTHB offre un accompagnement gratuit pour les projets étudiants !"
+
+  utter_MVP_conseils:
+    - text: " **Créer un MVP** :\n\n1. Outils gratuits :\n   - Site web : WordPress / Wix\n   - App mobile : Figma (prototype)\n   - Logiciel : GitHub + templates\n2. Étapes :\n   - Ciblez 1 problème clé\n   - Développez les features essentielles\n   - Testez avec 10-20 utilisateurs\n\n Exemple : Un MVP pour une app de livraison peut être un simple formulaire Google + WhatsApp !"
+
+  # === Support général ===
+  utter_urgence_help:
+    - text: " **Besoin d'aide urgente ?**\n\n- Contactez le responsable de la Cellule 1275 :\n  M. Amouri (☎️ +213 XX XX XX XX)\n- Ou envoyez un email avec '[URGENT]' dans l'objet, Email: cellule1275@usthb.dz.\n\n Réponse garantie sous 24h !"
+
+  utter_feedback_bot:
+    - text: " **Merci pour votre feedback !**\n\nNous améliorons constamment le chatbot. Un responsable vous contactera si besoin.\n\n⭐ Notez-nous sur [notre page](https://fb.com/cellule1275) !"
+        
+  utter_ask_other_help:
+  - text: "Puis-je vous aider avec autre chose concernant les incubateurs ou l'entrepreneuriat à l'USTHB ?"
+
+  utter_good_luck:
+  - text: "Je vous souhaite bonne chance dans votre projet entrepreneurial ! N'hésitez pas à revenir si vous avez des questions."
+
+  utter_quick_summary:
+  - text: "En résumé, les critères principaux sont : jeunesse de l'entreprise (moins de 8 ans), innovation, et fort potentiel de croissance. Besoin de plus de détails ?"
+
+  utter_ressources_available:
+  - text: "Les ressources restent disponibles en libre accès aux horaires d'ouverture du Hall Startup. Consultez l'emploi du temps à l'entrée."
+
+  utter_ask_creation_help:
+  - text: "Quel est votre principal défi actuel ? (idée, mentors, ressources,collaborateurs,partenaires, financement...)"
+
+
+  utter_ask_procedure_details:
+  - text: "Voulez-vous des détails sur un critère spécifique ou la procédure complète de labellisation ?"
+
+  utter_procedure_step_by_step:
+    - text: |
+        Procédure détaillée :
+        1. Préparation du dossier
+        2. Dépôt en ligne
+        3. Évaluation
+        4. Jury final
+        Chaque étape prend environ 15 jours.
+
+  utter_general_advice:
+  - text: "En cas de difficultés, n'oubliez pas que la Cellule 1275 propose un accompagnement personnalisé. Souhaitez-vous prendre rendez-vous ?"
+
+  utter_ask_cellule_meeting:
+  - text: "Voulez-vous planifier un rendez-vous avec un conseiller de la Cellule 1275 pour discuter de votre projet ?"
+
+  utter_cellule_schedule:
+  - text: "Les rendez-vous sont disponibles du dimanche au jeudi, de 9h à 15h. Veuillez envoyer un email à cellule1275@usthb.dz avec votre disponibilité."
+
+  utter_cellule_online:
+  - text: "Vous pouvez aussi poser vos questions via notre plateforme en ligne : [support.usthb.dz/cellule1275](https://support.usthb.dz)"
+  utter_networking_events:
+    - text: |
+        Les prochains événements de networking à l'USTHB incluent :
+        1) Café Entrepreneurs (vendredi)
+        2) Petit-déjeuner networking (1er mercredi du mois)
+
+  utter_investor_profiles:
+  - text: "**Nos investisseurs partenaires** recherchent typiquement :\n\n✅ **Projets technologiques**\n✅ **Équipes pluridisciplinaires**\n✅ **MVP testé**\n\n💡 **Intéressé par une introduction ?**"
+
+  utter_ask_client_target:
+  - text: "Souhaitez-vous de l'aide pour définir vos cibles ?"
+
+  utter_client_acquisition:
+  - text: |
+      Pour acquérir vos premiers clients : 
+      1) Offres de lancement 
+      2) Programmes beta-testeurs 
+      3) Partenariats stratégiques. 
+      Souhaitez-vous plus de détails ?
+
+  
+  utter_detailed_marketing_tips:
+  - text: |
+      **Stratégie Marketing Essentielle pour Startups** :
+
+      1. 🎯 **Canal Principal** :
+      - Choisissez UN réseau social où votre audience est active (ex: LinkedIn pour B2B, Instagram pour B2C)
+      - Publiez 3-4 fois/semaine avec :
+        • 1 post éducatif
+        • 1 témoignage client
+        • 1 offre spéciale
+        • 1 contenu interactif (sondage, QCM)
+
+      2. 📊 **Mesure d'Impact** :
+      - Suivez ces 3 métriques clés :
+        a) Taux d'engagement (likes + commentaires/impressions)
+        b) Taux de conversion (visites → leads)
+        c) Coût d'acquisition client (CAC)
+      - Outils gratuits : Google Analytics, Meta Business Suite
+
+      3. ✨ **Optimisation Continue** :
+      - Testez A/B chaque mois :
+        • 2 versions de texte d'appel à action
+        • 2 visuels différents
+        • 2 plages horaires de publication
+      - Conservez ce qui fonctionne (≥3% de conversion)
+
+
+  utter_plan_templates:
+  - text: "Nous mettons à disposition : 1) Template de business plan 2) Exemples réussis 3) Guide de rédaction. Souhaitez-vous accéder à ces ressources ?"
+
+  utter_ask_event_registration:
+  - text: "Souhaitez-vous vous inscrire à un de ces événement  ?"
+
+  utter_registration_process:
+  - text: "📌 **Pour vous inscrire** :\n\n1️⃣ **Créez un compte** sur [events.usthb.dz](https://events.usthb.dz)\n2️⃣ **Sélectionnez l'événement**\n3️⃣ **Confirmez** avant la **date limite** ⏳"
+
+  utter_event_reminder:
+  - text: "Je peux vous envoyer un rappel 48h avant l'événement si vous le souhaitez. Dites-moi simplement 'oui' si intéressé."
+  utter_reseautage_entrepreneurs:
+    - text: "Pour développer ton réseau entrepreneurial à l’USTHB, commence par rejoindre notre communauté active sur Telegram [t.me/usthb_startups](https://t.me/usthb_startups) et participe aux événements réguliers comme les Breakfast Meetings (chaque 1er mercredi du mois) et les Cafés Entrepreneurs (vendredis après-midi). Les réseaux sociaux comme Instagram (@cellule1275_usthb) sont aussi d’excellents moyens de rester connecté. L’astuce : viens toujours préparé avec un pitch court et des cartes de visite pour maximiser tes rencontres !"
+
+  utter_ask_icosnet_application:
+  - text: |
+      L'incubateur ICOSNET accepte les candidatures en ligne via leur portail.
+      Souhaitez-vous que je vous envoie le lien direct vers le formulaire de candidature ainsi que la liste des documents requis ?
+
+  utter_maybe_later:
+  - text: |
+      Je comprends tout à fait. N'hésitez pas à revenir vers moi quand vous serez prêt à postuler.
+      En attendant, je peux vous envoyer par email une brochure détaillée sur ICOSNET si cela vous intérite.
+
+  utter_ask_techinnov_contact:
+    - text: |
+        Voulez-vous que je vous transmette leurs coordonnées complètes (email, téléphone) pour prendre rendez-vous avec TECH_INNOV ou préférez-vous d'abord consulter leur site web ?
+
+  utter_techinnov_send_contact_info:
+    - text: |
+        Voici les coordonnées de TECH_INNOV : Email - contact@techinnov.usthb.dz, Téléphone - 023 45 67 89
+
+  utter_techinnov_suggest_website:
+    - text: |
+        Vous pouvez consulter le site web de TECH_INNOV ici : [TechInnov Website](http://techinnov.usthb.dz)
+
+  utter_ask_finance_type:
+  - text: |
+      L'USTHB propose plusieurs options de financement :
+      1) Subventions ANSEJ (jusqu'à 5 millions DZD)
+      2) Prêts ASF
+      3) Financement participatif
+
+      Voulez vous les details specifique pour chaque options ?
+
+  utter_finance_options_detail:
+  - text: |
+      Pour les subventions ANSEJ :
+      1) Avoir moins de 40 ans
+      2) Préparer un business plan complet
+      3) Suivre la formation obligatoire
+      
+      Pour les prêts ASF :
+      1) Avoir le label startup
+      2) Fournir une étude de marché
+      3) Présenter un prototype
+      
+      Le crowdfunding nécessite :
+      1) Une campagne préparée
+      2) Vidéo pitch
+      3) Contreparties attractives
+      
+      Quel programme vous correspond le mieux ?
+
+  utter_ask_resource_booking:
+  - text: |
+      Le Hall Startup propose :
+      1) Des espaces de coworking
+      2) Des labos
+      3) Du matériel disponible sur réservation
+      
+      Souhaitez-vous connaître les disponibilités actuelles ou plutôt comprendre le processus de réservation en ligne via le portail USTHB Entreprendre ?
+
+  utter_booking_process:
+  - text: |
+      Pour réserver :
+      1) Connectez-vous sur entreprendre.usthb.dz
+      2) Sélectionnez 'Réservation d'espaces'
+      3) Choisissez votre créneau (max 4h/jour)
+      4) Validez avec votre numéro étudiant
+      
+      Un badge d'accès vous sera remis à l'accueil du Hall Startup. Pensez à amener votre carte étudiante !
+
+
+  utter_ask_partner_type:
+  - text: |
+      Nous pouvons vous mettre en relation avec différents types de partenaires :
+      1) Co-fondateurs techniques (développeurs, ingénieurs)
+      2) Associés commerciaux
+      3) Experts sectoriels
+      
+      Voulez-vous que je cherche des partenaires ? Nous avons une base de données de 200+ talents prêts à collaborer.
+
+  utter_partner_matching:
+  - text: |
+      Remplissez ce formulaire en précisant :
+      1) Votre domaine d'activité
+      2) Les compétences recherchées
+      3) Votre disponibilité (temps plein/partiel)
+      4) Votre modèle de rémunération (équité, salaire, etc.)
+
+      www.formulaire_exemple.dz
+
+      Notre équipe vous proposera 3 profils correspondants sous 48h.
+
+  utter_ask_investor_pitch:
+  - text: |
+      Pour attirer des investisseurs, vous devrez préparer :
+      1) Un pitch de 5 minutes
+      2) Un executive summary
+      
+      Nous avons des modèles de pitch et d'executive summary qui ont fait leurs preuves, issus de startups USTHB ayant réussi leurs levées de fonds. Souhaitez-vous que je vous les transmette ?
+
+  utter_pitch_guidelines:
+  - text: |
+      Structure idéale :
+      1) Problème (30s)
+      2) Votre solution (1min)
+      3) Marché potentiel (30s)
+      4) Modèle économique (1min)
+      5) Équipe (30s)
+      6) Besoin financier (30s)
+      
+      Pratiquez devant le miroir jusqu'à le faire naturellement. Je peux vous mettre en contact avec des alumni pour des sessions d'entraînement.
+
+  utter_ask_strategy_focus:
+  - text: |
+      Votre stratégie marketing doit s'adapter à votre phase de développement. 
+      Souhaitez-vous recevoir des recommandations pour votre startup USTHB ?
+
+  utter_marketing_plan:
+  - text: |
+      Pour une startup USTHB typique, nous recommandons :
+      1) Mois 1-3 : Tests Google Ads (200.000 DZD budget) + Landing Page
+      2) Mois 4-6 : Programme ambassadeurs étudiants (20% de remise par parrainage)
+      3) Mois 7+ : Partenariats B2B avec les entreprises locales
+      
+
+  utter_ask_plan_review:
+  - text: |
+      Notre comité d'experts propose des revues gratuites de business plan tous les mercredis. Souhaitez-vous une analyse détaillée (1 heure) ?
+      
+      Préparez votre version actuelle en PDF !
+
+  utter_plan_review_process:
+  - text: |
+      Processus :
+      1) Envoyez votre Buisness-Plan à bp-review@usthb.dz
+      2) Recevez un créneau de rendez-vous
+      3) Rencontrez 2 experts (1 technique et 1 financier)
+      4) Obtenez un rapport écrit avec scores et recommandations
+      
+      Durée moyenne : 5 jours ouvrés. Les startups labellisées sont prioritaires.
+
+
+  utter_ask_mentor_request:
+  - text: "Souhaitez-vous faire une demande officielle de mentorat ?"
+
+  utter_mentor_application:
+  - text: |
+      Pour postuler au programme de mentorat :
+      1) Remplissez le formulaire sur [mentorat.usthb.dz](https://mentorat.usthb.dz)
+      2) Joignez votre Business Model Canvas
+      3) Précisez vos besoins spécifiques
+      Un conseiller vous contactera sous 72h.
+
+  utter_ask_idea_feedback:
+  - text: "Souhaitez-vous obtenir un feedback structuré sur votre idée de projet par nos experts ? (Processus gratuit)"
+
+  utter_idea_evaluation:
+  - text: |
+      🧪 **Processus d'évaluation** :
+      1. Soumettez votre idée via [ideation.usthb.dz](https://ideation.usthb.dz)
+      2. Recevez sous 48h :
+         - Score de faisabilité ★★★☆☆
+         - Benchmark concurrentiel
+         - Suggestions d'amélioration
+      3. Option : Présentation devant notre comité
+
+  utter_default:
+  - text: "Je ne suis pas sûr de comprendre votre question. Pouvez-vous reformuler ou poser une autre question ?" 
