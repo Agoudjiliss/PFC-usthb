@@ -1,5 +1,5 @@
-/home/runner/workspace/src/main/java/com/chatbot/model/Resource.java
 /home/runner/workspace/src/main/java/com/chatbot/model/Feedback.java
+/home/runner/workspace/src/main/java/com/chatbot/model/Resource.java
 /home/runner/workspace/src/main/java/com/chatbot/config/SecurityConfig.java
 /home/runner/workspace/src/main/java/com/chatbot/dto/auth/LoginRequest.java
 /home/runner/workspace/src/main/java/com/chatbot/security/AuthEntryPointJwt.java
