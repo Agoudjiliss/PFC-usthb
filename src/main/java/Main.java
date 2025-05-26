@@ -1,14 +1,12 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// import org.junit.jupiter.api.Test;
+package com.chatbot;
 
-public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-  // @Test
-  // void addition() {
-  //     assertEquals(2, 1 + 1);
-  // }
+@SpringBootApplication
+public class ChatbotBackendApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ChatbotBackendApplication.class, args);
+    }
 }
