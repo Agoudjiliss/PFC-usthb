@@ -53,11 +53,11 @@ public class ResourceService {
         
         // Créer l'entité Resource
         Resource resource = new Resource();
-        resource.setFileName(originalFileName);
+        resource.setFilename(originalFileName);
         resource.setFilePath(filePath);
-        resource.setFileType(file.getContentType());
+        resource.setContentType(file.getContentType());
         resource.setFileSize(file.getSize());
-        resource.setDescription(description);
+        // Note: description field doesn't exist in Resource model
         resource.setUploadedBy(user);
         resource.setUploadedAt(LocalDateTime.now());
         resource.setStatus(Resource.ProcessingStatus.PENDING);

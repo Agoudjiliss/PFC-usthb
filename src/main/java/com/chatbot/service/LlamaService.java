@@ -71,7 +71,7 @@ public class LlamaService {
             rasaService.updateTrainingData(rasaDataset);
 
             // 5. Lancer l'entraînement automatique
-            trainingService.startAutomaticTraining(resource.getUploadedBy(), "Auto-training from resource: " + resource.getFileName());
+            trainingService.startAutomaticTraining(resource.getUploadedBy(), "Auto-training from resource: " + resource.getFilename());
 
             // Mettre à jour le statut
             resource.setStatus(Resource.ProcessingStatus.COMPLETED);

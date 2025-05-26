@@ -16,9 +16,9 @@ public class ResourceResponse {
     
     public ResourceResponse(Resource resource) {
         this.id = resource.getId();
-        this.fileName = resource.getFileName();
-        this.description = resource.getDescription();
-        this.fileType = resource.getFileType();
+        this.fileName = resource.getFilename();
+        this.description = null; // description field doesn't exist in Resource model
+        this.fileType = resource.getContentType();
         this.fileSize = resource.getFileSize();
         this.status = resource.getStatus();
         this.uploadedAt = resource.getUploadedAt();
