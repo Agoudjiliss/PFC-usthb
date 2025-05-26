@@ -30,6 +30,8 @@ public class RasaService {
     public RasaService() {
         this.webClient = WebClient.builder()
                 .codecs(configurer -> configurer.defaultCodecs().maxInMemorySize(1024 * 1024))
+                .defaultHeader("Content-Type", "application/json")
+                .defaultHeader("Accept", "application/json")
                 .build();
     }
     

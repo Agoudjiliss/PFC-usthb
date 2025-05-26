@@ -37,6 +37,9 @@ public class RasaModelService {
     @Autowired
     private RasaService rasaService;
     
+    @Autowired
+    private RasaConnectionService rasaConnectionService;
+    
     @Value("${app.upload.dir:uploads/rasa-models}")
     private String uploadDir;
     
@@ -178,12 +181,14 @@ public class RasaModelService {
     
     private boolean deployModelToRasa(RasaModel model) {
         try {
-            // Here you would implement the actual deployment to Rasa
-            // This could involve copying the model to Rasa's model directory
-            // and reloading the Rasa server
+            // Check if Rasa server is running
+            if (!rasaConnectionService.isRasaServerRunning()) {
+                logger.error("Rasa server is not running");
+                return false;
+            }
             
-            // For now, we'll just validate that Rasa is available
-            return rasaService.isRasaAvailable();
+            // Load the model in Rasa
+            return rasaConnectionService.loadModel(model);
             
         } catch (Exception e) {
             logger.error("Erreur lors du déploiement vers Rasa: {}", e.getMessage());
