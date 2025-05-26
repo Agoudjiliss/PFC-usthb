@@ -33,6 +33,9 @@ jwt:
 # External Services
 rasa:
   url: http://0.0.0.0:5005
+  webhook-url: ${rasa.url}/webhooks/rest/webhook
+  model-upload-path: /rasa-models/
+  project-path: ./Chatbot_USTHB_Github/
 
 app:
   upload:
