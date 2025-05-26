@@ -148,3 +148,117 @@ public class LlamaService {
         }
     }
 }
+package com.chatbot.service;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Service
+public class LlamaService {
+    
+    private static final Logger logger = LoggerFactory.getLogger(LlamaService.class);
+    
+    @Value("${llama.url:http://localhost:5001}")
+    private String llamaUrl;
+    
+    private final RestTemplate restTemplate;
+    private final ObjectMapper objectMapper;
+    
+    public LlamaService() {
+        this.restTemplate = new RestTemplate();
+        this.objectMapper = new ObjectMapper();
+    }
+    
+    public Map<String, Object> processPdfFile(MultipartFile file) {
+        try {
+            // Prepare multipart request
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+            
+            MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+            body.add("file", new ByteArrayResource(file.getBytes()) {
+                @Override
+                public String getFilename() {
+                    return file.getOriginalFilename();
+                }
+            });
+            
+            HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
+            
+            // Call LLaMA service
+            ResponseEntity<String> response = restTemplate.postForEntity(
+                llamaUrl + "/process-pdf", 
+                requestEntity, 
+                String.class
+            );
+            
+            if (response.getStatusCode().is2xxSuccessful()) {
+                JsonNode responseNode = objectMapper.readTree(response.getBody());
+                
+                Map<String, Object> result = new HashMap<>();
+                result.put("success", true);
+                result.put("dataset", parseDataset(responseNode.get("dataset")));
+                result.put("extractedTextLength", responseNode.get("extracted_text_length").asInt());
+                result.put("generatedExamples", responseNode.get("generated_examples").asInt());
+                
+                logger.info("PDF processed successfully. Generated {} examples", 
+                    responseNode.get("generated_examples").asInt());
+                
+                return result;
+            } else {
+                throw new RuntimeException("LLaMA service returned error: " + response.getStatusCode());
+            }
+            
+        } catch (Exception e) {
+            logger.error("Error processing PDF with LLaMA service: {}", e.getMessage());
+            
+            Map<String, Object> result = new HashMap<>();
+            result.put("success", false);
+            result.put("error", e.getMessage());
+            return result;
+        }
+    }
+    
+    private List<Map<String, String>> parseDataset(JsonNode datasetNode) {
+        List<Map<String, String>> dataset = new ArrayList<>();
+        
+        if (datasetNode != null && datasetNode.isArray()) {
+            for (JsonNode item : datasetNode) {
+                Map<String, String> example = new HashMap<>();
+                example.put("text", item.get("text").asText());
+                example.put("intent", item.get("intent").asText());
+                dataset.add(example);
+            }
+        }
+        
+        return dataset;
+    }
+    
+    public boolean isLlamaServiceAvailable() {
+        try {
+            ResponseEntity<String> response = restTemplate.getForEntity(llamaUrl + "/health", String.class);
+            return response.getStatusCode().is2xxSuccessful();
+        } catch (Exception e) {
+            logger.warn("LLaMA service is not available: {}", e.getMessage());
+            return false;
+        }
+    }
+}

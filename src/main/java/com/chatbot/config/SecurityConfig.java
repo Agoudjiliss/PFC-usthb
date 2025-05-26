@@ -56,15 +56,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .cors(cors -> cors.configurationSource(new CorsConfig().corsConfigurationSource()))
             .csrf(csrf -> csrf.disable())
             .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/swagger-ui/**", "/api-docs/**").permitAll()
-                .requestMatchers("/api/admin/**", "/api/intents/**", "/api/resources/**", "/api/training/**", "/api/rasa/**").hasRole("ADMIN")
-                .requestMatchers("/api/chat/**").hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/api/admin/**", "/api/intents/**", "/api/resources/**", "/api/training/**", "/api/rasa/**", "/api/settings/**").hasRole("ADMIN")
+                .requestMatchers("/api/chat/**", "/api/feedback").hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/api/feedback/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             );
         
