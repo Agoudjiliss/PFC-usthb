@@ -55,7 +55,7 @@ export default function HomePage() {
     "Ne dispose pas d'informations en temps réel sur tous les programmes",
   ]
 
-  const hasMessages = activeConversation?.messages.length > 0
+  const hasMessages = !!activeConversation?.messages && activeConversation.messages.length > 0;
 
   return (
     <div className="flex h-screen bg-gray-50">

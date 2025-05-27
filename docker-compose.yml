@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  rasa:
+    build: 
+      context: ./Chatbot_USTHB_Github
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./Chatbot_USTHB_Github:/app
+    environment:
+      - RASA_TOKEN=${RASA_TOKEN:-your-secret-token}
+    networks:
+      - chatbot-network
+
+  action-server:
+    build:
+      context: ./Chatbot_USTHB_Github
+      dockerfile: Dockerfile
+    command: rasa run actions
+    volumes:
+      - ./Chatbot_USTHB_Github:/app
+    networks:
+      - chatbot-network
+
+  llm:
+    build:
+      context: .
+      dockerfile: llm/Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./uploads:/app/uploads
+    networks:
+      - chatbot-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/chatbot
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - RASA_URL=http://rasa:5005
+      - LLM_URL=http://llm:5001
+      - JWT_SECRET=your-secret-key-here-must-be-at-least-32-characters
+    depends_on:
+      - db
+      - rasa
+      - llm
+    networks:
+      - chatbot-network
+
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=chatbot
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - chatbot-network
+
+  chat-ui:
+    build:
+      context: ./chat-ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080/api
+    networks:
+      - chatbot-network
+
+networks:
+  chatbot-network:
+    driver: bridge
+
+volumes:
+  postgres_data: 
